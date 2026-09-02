@@ -1,0 +1,159 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ITSE 1302 Building your Python scientific system from scratch</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+a:hover {color: #00ff00;}
+
+pre {color: black;}
+p{color:black;}
+h1{color:black}
+h2{color: black}
+h3{color: black}
+h4{color: black}
+h5{color: black}
+h6{color: black}
+blockquote{color: purple}
+ul{color: black}
+ol{color: black}
+body{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12pt;
+	background-color: #ffffff;}
+.auto-style3 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+<h1 class="auto-style3">Histogram Plotting Preview</h1>
+<p>The Data Visualization section of this eBook provides and explains detailed 
+information about plotting various types of data using the Matplotlib library. 
+However, you will need to know something about plotting of statistical data 
+before you reach that section of the eBook. The purpose of this lesson is to 
+provide a preview of the code syntax that you can use to plot four histograms in 
+a single figure.</p>
+<p>No attempt is made to explain the code other than the comments. It is 
+expected that you should be able to understand the code well enough from those 
+comments to use it when you need it.</p>
+<p>The Python code that I will show later causes the following image to appear 
+on the screen.</p>
+<p>
+<img alt="Figure with four histograms" height="562" src="preview01.jpg" width="659"/></p>
+
+<p><strong>Description of the image in Figure 1</strong></p>
+
+<p><strong>Type of image:</strong> A composite figure containing four histogram plots arranged in a 2x2 grid within a window titled Figure 1.</p>
+
+<p><strong>Overall summary:</strong> The figure displays four separate histograms under the overall title "Four Histograms in a Figure." Each subplot has its own title indicating its position in the grid: Upper Left, Upper Right, Lower Left, and Lower Right. All histograms show frequency distributions using vertical bars, with X-Value on the horizontal axis and Y-Value on the vertical axis. The upper histograms appear more bell-shaped, while the lower histograms appear flatter or more uniform.</p>
+
+<p><strong>Detailed description:</strong></p>
+<ul>
+  <li><strong>Overall layout:</strong> The figure consists of four subplots arranged in two rows and two columns. The main title "Four Histograms in a Figure" appears centered at the top of the window.</li>
+
+  <li><strong>Upper Left histogram:</strong> This subplot is titled "Upper Left." It shows a histogram with a roughly bell-shaped distribution. The x axis is labeled "X-Value" and the y axis is labeled "Y-Value." The bars rise toward the center and taper toward the edges.</li>
+
+  <li><strong>Upper Right histogram:</strong> This subplot is titled "Upper Right." It also displays a histogram with a bell-shaped distribution similar to the Upper Left plot. The same axis labels appear: "X-Value" on the horizontal axis and "Y-Value" on the vertical axis.</li>
+
+  <li><strong>Lower Left histogram:</strong> This subplot is titled "Lower Left." It shows a flatter distribution with bars of more uniform height across the x axis. The axes are labeled "X-Value" and "Y-Value."</li>
+
+  <li><strong>Lower Right histogram:</strong> This subplot is titled "Lower Right." It also shows a relatively flat or uniform distribution. The axes are labeled "X-Value" and "Y-Value," consistent with the other subplots.</li>
+</ul>
+
+<p><strong>Purpose of the image:</strong> To illustrate an example of plotting four histograms in a single figure, demonstrating how multiple statistical distributions can be displayed and compared using a 2x2 subplot layout.</p>
+
+<p>The image shown above was produced with the following code.</p>
+<pre>import matplotlib.pyplot as plt
+
+#Create a 2x2 figure containing four plots with
+#shared x and y tick marks and labels.
+fig,ax = plt.subplots(2,2,sharey=True,sharex=True)
+
+#Create and plot histograms for four data sets.
+#Create a dataset.
+data01=list(range(0,100,5))+list(
+    range(10,90,5))+list(
+    range(20,80,5))+list(
+    range(30,70,5))+list(
+    range(40,60,5))
+
+#Plot the dataset
+ax[0,0].hist(
+         data01,#Data to plot
+         bins=50,#Number of bins in the histogram
+         density=True,#Normalize the histogram
+         range=(min(data01),#Lower limit of the histogram
+         max(data01)));#Upper limit of the histogram
+#Apply some cosmetics to the plot
+ax[0,0].grid(True)
+ax[0,0].set_title('Upper Left')#Title above the histogram
+ax[0,0].set_ylabel('Y-Value')#Label on y-axis of histogram
+
+#Create and plot another dataset
+data02=list(range(0,100,5))+list(
+    range(10,90,5))+list(
+    range(20,80,5))+list(
+    range(30,70,5))
+
+ax[0,1].hist(data02,
+         bins=50,
+         density=True,
+         range=(min(data02),
+         max(data02)));
+ax[0,1].grid(True)
+ax[0,1].set_title('Upper Right')
+
+#Create and plot another dataset
+data03=list(range(0,100,5))+list(
+    range(10,90,5))+list(
+    range(20,80,5))
+ax[1,0].hist(data03,
+         bins=50,
+         density=True,
+         range=(min(data03),
+         max(data03)));
+ax[1,0].grid(True)
+ax[1,0].set_title('Lower Left')
+ax[1,0].set_xlabel('X-Value')
+ax[1,0].set_ylabel('Y-Value')
+
+#Create and plot another dataset
+data04=list(range(0,100,5))+list(
+    range(10,90,5))
+ax[1,1].hist(data04,
+         bins=50,
+         density=True,
+         range=(min(data04),
+         max(data04)));
+ax[1,1].grid(True)
+ax[1,1].set_title('Lower Right')
+ax[1,1].set_xlabel('X-Value')
+
+#Display a title at the top
+plt.suptitle('Four Histograms in a Figure')
+
+#Cause the plot to become visible
+plt.tight_layout()
+plt.show()</pre>
+
+<h1><a name="Housekeeping_material">Housekeeping material</a></h1>
+<p>Author: Prof. Richard G. Baldwin<br/>
+Affiliation: Professor of Computer 
+Information Technology at Austin Community College in Austin, TX.<br/>
+File: Preview01.htm<br/>
+Revised: 02/19/26<br/>
+Copyright 2022 Richard G. Baldwin</p>
+<p>-end-</p>
+<p>&nbsp;</p>
+</body>
+
+</html>

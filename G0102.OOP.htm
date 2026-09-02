@@ -1,0 +1,1080 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>GAME-1343</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+a:hover {color:#00ff00;}
+.auto-style1 {
+	text-align: center;
+}
+div.a {
+  border: 2px solid black;
+}
+
+</style>
+</head>
+
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 16pt; background-color: #FFFFFF;"
+>
+<h1 class="auto-style1">G0102: Object-Oriented Programming (OOP) in Python</h1>
+<!-- All c.n.x references purged 02/24/22 -->
+<h2>Table of Contents</h2>
+<ul>
+	<li><a href="#Introduction_">Introduction</a></li>
+	<li><a href="#Classes_and_Objects">Classes and Objects</a>
+
+	<ul>
+		<li><a href="#The_Use_of_Self">The Use of Self</a><ul>
+			<li><a href="#Why_Use_Self_">Why Use Self? </a> </li>
+			<li><a href="#Method_Definition_">Method Definition </a> </li>
+			<li><a href="#Why_Include_Self_as_the_First_Parameter">Why Include Self as the First Parameter?</a></li>
+		</ul>
+		</li>
+		<li><a href="#Instance_Methods_">Instance Methods</a><ul>
+			<li><a href="#Why_Do_We_Call_Them_Instance_Methods">Why Do We Call Them "Instance Methods"?</a></li>
+		</ul>
+		</li>
+		<li><a href="#Class_Methods_">Class Methods 
+		</a> 
+		<ul>
+			<li><a href="#Why_Do_We_Call_Them_Class_Methods">Why Do We Call Them "Class Methods"?</a></li>
+		</ul>
+		</li>
+		<li><a href="#Static_Methods_">Static Methods</a><ul>
+			<li><a href="#Why_Do_We_Call_Them_static_methods">Why Do We Call Them "static methods"?</a></li>
+		</ul>
+		</li>
+		<li><a href="#Classes_and_Objects_Summary">Classes and Objects Summary</a><ul>
+			<li><a href="#Accessing_Instance_Attributes_">Accessing Instance Attributes 
+			</a> </li>
+			<li><a href="#Method_Calls_Within_the_Class">Method Calls Within the Class</a></li>
+			<li><a href="#Automatic_Self_when_Calling_Methods_">Automatic Self when Calling Methods</a> </li>
+			<li><a href="#Class_Methods_vs._Instance_Methods_">Class Methods vs. Instance Methods</a> </li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#Inheritance_">Inheritance</a><ul>
+		<li><a href="#Example_Code">Example Code</a><ul>
+			<li><a href="#Class_Definitions">Class Definitions</a></li>
+			<li><a href="#Test_Code">Test Code</a></li>
+		</ul>
+		</li>
+		<li><a href="#A_More_Interesting_Example">A More Interesting Example</a></li>
+	</ul>
+	</li>
+	<li><a href="#Encapsulation">Encapsulation</a><ul>
+		<li><a href="#Example Code2">Example Code</a><ul>
+			<li><a href="#Class Definitions2">Class Definitions</a></li>
+			<li><a href="#Test Code2">Test Code</a></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#Polymorphism_">Polymorphism</a> 
+	<ul>
+		<li><a href="#Example Code3">Example Code</a><ul>
+			<li><a href="#Class Definitions3">Class Definitions</a></li>
+			<li><a href="#Test Code3">Test Code</a></li>
+			<li><a href="#Output">Output</a></li>
+			<li><a href="#Synopsis">Synopsis</a></li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><a href="#Run_the_Code">Run the Code</a></li>
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+
+</ul>
+<h2><a name="Introduction_">Introduction</a> </h2>
+<p>Welcome to this lesson on object-oriented programming (OOP) in Python. Since you're already familiar with procedural programming 
+in Python, this lesson will focus on the key concepts of classes, objects, inheritance, 
+encapsulation, and polymorphism. </p>
+<p>Object-oriented programming is a paradigm that organizes code into objects, 
+which are instances of classes. This approach can make code more modular, 
+reusable, and easier to maintain.
+
+</p>
+<h2><a name="Classes_and_Objects">Classes and Objects</a>
+
+</h2>
+<p>A class is a blueprint for creating objects. It defines attributes (data) and methods (functions) that the objects will have.
+A single class can be used to create many objects. Here's a simple example:</p>
+<div class="a">
+<pre>class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def bark(self):
+        print(f"{self.name} says: Woof!")
+# End class definition and begin test code here.
+
+# Creating an object (instance) of the Dog class
+my_dog = Dog("Buddy", 3)
+# The above statement looks like an ordinary function
+#  call except that Dog is the name of a class and is
+#  not the name of a function.
+
+# Accessing attributes
+print(my_dog.name)  # Output: Buddy
+
+# Calling methods
+my_dog.bark()  # Output: Buddy says: Woof!
+#===================================================================</pre>
+</div>
+<p>Key points
+
+</p>
+<ul>
+	<li>The <strong>__init__</strong> method is a special method (constructor) that initializes the object's attributes.
+	</li>
+	<li><strong>self</strong>  refers to the instance of the class and is used to access its attributes and methods.
+	</li>
+</ul>
+<h3><a name="The_Use_of_Self">The Use of Self</a></h3>
+<p>The use of <strong>self</strong> in Python classes is a common point of confusion for those new to object-oriented programming in Python.
+</p>
+<p>The <strong>self</strong> parameter is used to represent the instance of the 
+class. It's a convention in Python to name this first parameter self, but you 
+could technically use any valid variable name. However, sticking to <strong>self</strong> is highly recommended for readability and consistency. </p>
+<p>Let's break down the use of self
+
+</p>
+
+<h4><a name="Why_Use_Self_">Why Use Self?
+
+</a>
+
+</h4>
+<p>The use of self allows each instance of the class (object) to have its own set of attributes. 
+Without it, you couldn't have multiple instances of a class with different 
+attribute values. Here's an example.</p>
+
+
+
+<div class="a">
+<pre>class Car:
+    def __init__(self, make, model): #constructor
+        self.make = make
+        self.model = model
+    
+    def describe(self): #instance method
+        return f"This car is a {self.make} {self.model}"
+# End class definition and begin test code here.
+
+# Create two objects with different attributes from the same class
+car1 = Car("Toyota", "Corolla")
+car2 = Car("Honda", "Civic")
+
+print(car1.describe())  # Output: This car is a Toyota Corolla
+print(car2.describe())  # Output: This car is a Honda Civic</pre>
+</div>
+<h4><a name="Method_Definition_">Method Definition
+
+</a>
+
+</h4>
+<p>When you define an <a href="#Instance_Methods_">instance method</a> within a class, you always include 
+<strong>self</strong> as the first 
+parameter. (See a discussion of <a href="#Class_Methods_">class methods</a> and
+<a href="#Static_Methods_">static methods</a> later.)</p>
+
+
+
+<div class="a">
+<pre>class MyClass:
+    def my_method(self, arg1, arg2):
+        # method body</pre>
+</div>
+<h4><a name="Why_Include_Self_as_the_First_Parameter">Why Include Self as the First Parameter?</a></h4>
+
+
+
+<p>Here's why we typically use <strong>self</strong> as the first parameter in 
+instance method definitions, and when we might 
+choose not to. </p>
+<p>The reason is rooted in how Python implements object-oriented programming
+
+</p>
+<h3><a name="Instance_Methods_">Instance Methods </a> </h3>
+<p>For <a href="#Why_Do_We_Call_Them_Instance_Methods">instance methods</a>, 
+<strong>self</strong> (or some other name) is always the first parameter. This is because when you call a method on an instance 
+(object), Python automatically passes a reference to the instance as the first argument. 
+That reference can be used later to access attributes or methods belonging to 
+that specific object.</p>
+<p>Here's some example code.</p>
+<div class="a">
+<pre>class MyClass:
+    def instance_method(self, arg1, arg2):
+        pass
+# End class definition and begin test code here.
+
+obj = MyClass() #create an object of the class
+#call an instance method on the object
+obj.instance_method(1, 2) 
+# Python translates this to
+# MyClass.instance_method(obj, 1, 2)  </pre>
+</div>
+<p>(In case you are unfamiliar, the
+<strong>pass</strong>  statement in Python is a null operation — when it is executed, 
+nothing happens. It's a placeholder that is syntactically needed to create an 
+empty code block.)</p>
+<h4><a name="Why_Do_We_Call_Them_Instance_Methods">Why Do We Call Them "Instance Methods"?</a></h4>
+<p>Instance, (or instance of a class), is another term for object.</p>
+<p>The term "instance method" is used to distinguish it from other types of 
+methods in object-oriented programming. Let's break 
+this down :</p>
+<ol>
+	<li>"Instance" part
+
+	<ol>
+		<li>An instance method is bound to an instance (object) of a class. 
+		(From an operational perspective, the code behaves as if each object has 
+		one.)</li>
+		<li>It operates on a specific instance (object) of the class.
+</li>
+		<li>It can access and modify the instance's attributes. </li>
+		<li>It can call other instance methods belonging to the same object and 
+		typically uses <strong>self</strong> to do so.</li>
+	</ol>
+	</li>
+	<li>Why "instance"
+
+	<ol>
+		<li>These methods are called on instances (objects) of a class, not on the class itself.
+		</li>
+		<li>Each call to an instance method is associated with a particular object.
+		</li>
+	</ol>
+	</li>
+	<li>Contrast with other method types
+
+	<ol>
+		<li><a href="#Class_Methods_">Class methods</a>: Operate on the class itself, not on instances.
+</li>
+		<li><a href="#Static_Methods_">Static methods</a>: Don't operate on instances or the class. </li>
+	</ol>
+	</li>
+	<li>Automatic self parameter
+
+	<ol>
+		<li>Instance methods automatically receive a reference to the instance as the first parameter (conventionally named 
+		<strong>self</strong>).
+		</li>
+		<li>This allows the method to access and modify the specific instance's data.</li>
+	</ol>
+	</li>
+</ol>
+<h5>Usage Example</h5>
+<div class="a">
+<pre>class Dog:
+    def __init__(self, name):
+        self.name = name
+    
+    def bark(self):  # This is an instance method
+        print(f"{self.name} says: Woof!")#Access the name attribute
+# End class definition and begin test code here.
+
+fido = Dog("Fido")
+fido.bark()  # Calling the instance method on a specific instance</pre>
+</div>
+<p>Here, bark() is an instance method because
+
+</p>
+<ul>
+	<li>It's called on a specific instance (fido).
+</li>
+	<li>It can access the instance's attributes (like self.name).
+</li>
+	<li>Python automatically passes the instance (fido) as the self parameter.
+	</li>
+</ul>
+<h5>Behavior
+
+</h5>
+<ul>
+	<li>Instance methods can access and modify instance-specific data.
+</li>
+	<li>They can also access class-level data, but typically work with instance-specific information.
+	</li>
+</ul>
+<h5>Synopsis</h5>
+<p>We call it an "instance method" because it's intrinsically tied to and operates on instances of the 
+class. This terminology helps differentiate the method's behavior and scope within the object-oriented paradigm.</p>
+<h3><a name="Class_Methods_">Class Methods
+</a>
+</h3>
+<p>Class methods use <strong>cls</strong> as the first parameter by convention, not 
+<strong>self</strong>. They're defined using the @classmethod decorator. Here is 
+an example.</p>
+<div class="a">
+<pre>class MyClass:
+    @classmethod
+    def class_method(cls, arg1):
+        pass</pre>
+</div>
+
+
+
+<h4><a name="Why_Do_We_Call_Them_Class_Methods">Why Do We Call Them "Class Methods"?</a></h4>
+<p>The term "class method" is used to describe a specific type of method in 
+object-oriented programming. Let's break down why we 
+call them "class methods"
+
+</p>
+<ol>
+	<li>"Class" part
+
+	<ol>
+		<li>These methods are bound to the class itself, not to instances of the class.
+		</li>
+		<li>They operate on class-level data rather than instance-specific data.
+		</li>
+	</ol>
+
+
+</li>
+	<li>Why "class"
+
+	<ol>
+		<li>These methods can be called on the class directly, without creating an instance 
+		(object) of the class.
+</li>
+		<li>They have access to the class itself as their first parameter (conventionally named 
+		<strong>cls</strong>).
+		</li>
+	</ol>
+
+
+	</li>
+	<li>Contrast with instance methods
+
+	<ol>
+		<li>Instance methods operate on specific instances and their data.
+</li>
+		<li>Class methods operate on class-level data and behaviors. </li>
+	</ol>
+
+
+</li>
+	<li>The @classmethod decorator
+
+	<ol>
+		<li>In Python, class methods are defined using the @classmethod decorator.
+		</li>
+		<li>This decorator tells Python to treat the method differently from instance methods.
+		</li>
+	</ol>
+
+
+	</li>
+	<li>Automatic cls parameter
+
+	<ol>
+		<li>Class methods receive the name of the class as the implicit first parameter, conventionally named cls.
+		</li>
+		<li>This allows the method to access or modify class-level attributes and call other class methods.
+		</li>
+	</ol>
+	</li>
+</ol>
+
+
+
+<h5>Usage Example</h5>
+<div class="a">
+<pre>class Student:    
+    school_name = "Python High"
+    
+    def __init__(self, name):#Constructor
+        self.name = name
+    
+    @classmethod
+    def change_school(cls, new_school):
+        cls.school_name = new_school
+    
+    @classmethod
+    def get_school_name(cls):
+        return cls.school_name
+# End class definition and begin test code here.
+
+# Using class methods without creating an instance
+print(Student.get_school_name())  # Output: Python High
+Student.change_school("Code Academy")
+print(Student.get_school_name())  # Output: Code Academy</pre>
+</div>
+<p>Here, <strong>change_school()</strong> and <strong>get_school_name()</strong> are class methods because
+
+</p>
+<ul>
+	<li>They're decorated with @classmethod.
+</li>
+	<li>They operate on the class (Student) itself, not on instances.
+</li>
+	<li>They can be called on the class without creating an instance. </li>
+</ul>
+<h5>Common use cases
+
+</h5>
+<ul>
+	<li>Alternative constructors
+</li>
+	<li>Methods that modify class-level state
+</li>
+	<li>Factory methods </li>
+</ul>
+<p>(The first and last use cases are beyond the scope of this course.)</p>
+<h5>Synopsis</h5>
+<p>We call them "class methods" because they are methods that are closely associated with and operate on the class itself, rather than on specific instances of the class. This terminology helps distinguish their behavior and scope within the object-oriented paradigm, highlighting their ability to work with class-level data and their accessibility without needing to instantiate 
+an object the class.</p>
+
+
+
+<h3><a name="Static_Methods_">Static Methods
+</a>
+</h3>
+<p>Static methods don't automatically receive any implicit first argument. They're defined using the @staticmethod decorator. 
+Here is an example.</p>
+<div class="a">
+<pre>class MyClass:
+    @staticmethod
+    def static_method(arg1):
+        pass</pre>
+</div>
+<h4><a name="Why_Do_We_Call_Them_static_methods">Why Do We Call Them "static methods"?</a></h4>
+<p>The term "static method" comes from object-oriented programming concepts and 
+has specific meaning in Python. Let's break down why we call them "static 
+methods"
+
+</p>
+<ol>
+	<li>"Static" part
+
+	<ol>
+		<li>"Static" implies that these methods don't depend on the state of the object or the class.
+		</li>
+		<li>They are "statically" bound to a class, meaning they don't change based on the instance or class they're called from.
+		</li>
+	</ol>
+	</li>
+	<li>Independence
+
+	<ol>
+		<li>Static methods don't have access to <strong>self</strong> (the instance) or 
+		<strong>cls</strong> (the class).
+		</li>
+		<li>They behave like regular functions but are defined inside a class for namespace organization.
+		</li>
+	</ol>
+	</li>
+	<li>No automatic first argument
+
+	<ol>
+		<li>Unlike instance methods (<strong>self</strong>) or class methods (<strong>cls</strong>), static methods don't receive any implicit first argument.
+		</li>
+	</ol>
+	</li>
+	<li>The @staticmethod decorator
+
+	<ol>
+		<li>In Python, static methods are defined using the @staticmethod decorator.
+		</li>
+		<li>This decorator tells Python that the method doesn't need to receive the class or instance as its first argument.
+		</li>
+	</ol>
+	</li>
+</ol>
+<h5>Usage Example </h5>
+
+
+
+<div class="a">
+<pre>class MathOperations:
+    @staticmethod
+    def add(x, y):
+        return x + y
+    
+    @staticmethod
+    def is_even(num):
+        return num % 2 == 0
+# End class definition and begin test code here.
+
+# Using static methods
+print(MathOperations.add(5, 3))  # Output: 8
+print(MathOperations.is_even(6))  # Output: True</pre>
+</div>
+<p>Here, <strong>add() </strong>and <strong>is_even()</strong> are static methods because
+
+</p>
+<ul>
+	<li>They're decorated with @staticmethod.
+</li>
+	<li>They don't depend on instance or class state.
+</li>
+	<li>They can be called on the class without creating an instance. </li>
+</ul>
+<h5>Why "static"
+
+</h5>
+<ul>
+	<li>The term comes from other programming languages where "static" members belong to a class rather than instances.
+	</li>
+	<li>In Python, "static" emphasizes that these methods are stateless with respect to the class and its instances.
+	</li>
+</ul>
+<h5>Use cases
+
+</h5>
+<ul>
+	<li>Utility functions related to the class but not dependent on its state.
+	</li>
+	<li>Helper functions that don't need access to class or instance attributes.
+	</li>
+</ul>
+<h5>Synopsis</h5>
+<p>We call them "static methods" because they are statically bound to the class and don't depend on or modify the state of the class or its instances. This terminology helps distinguish them from instance and class methods, highlighting their independence from the object-oriented nature of the class they're defined in. Static methods essentially act like regular functions but are placed in classes for logical grouping and namespace management.</p>
+<h3><a name="Classes_and_Objects_Summary">Classes and Objects Summary</a></h3>
+<p>When you define an instance method within a class, you always include 
+<strong>self</strong> as the first parameter. Class methods use <strong>cls</strong> 
+as their first parameter, and static methods don't require a special first 
+parameter.
+</p>
+<p>The reason for using <strong>self</strong> in instance methods is to give the method access to the instance's attributes and other methods. Without 
+<strong>self</strong>, the method wouldn't be able to reference or modify the instance's state.
+</p>
+<p>This explicit <strong>self</strong> parameter is a design choice in Python. In some other languages (like Java or C++), the reference to the current instance is implicit and doesn't appear in the method signature. Python's approach makes the instance reference explicit, which can make the code more readable and the behavior more clear, especially for newcomers to the language.</p>
+<h4><a name="Accessing_Instance_Attributes_">Accessing Instance Attributes
+
+</a>
+
+</h4>
+<p><strong>self</strong> is used to access and modify the attributes of the instance. 
+Here is an example.</p>
+<div class="a">
+<pre>class Person:
+    def __init__(self, name):
+        self.name = name  # Creating an instance attribute
+    
+    def greet(self):
+        # Accessing the instance attribute
+        print(f"Hello, my name is {self.name}")  </pre>
+</div>
+
+
+
+<h4><a name="Method_Calls_Within_the_Class">Method Calls Within the Class</a>
+
+</h4>
+<p>When calling one method from another within the same class, you use <strong>self</strong>.</p>
+<div class="a">
+<pre>class Calculator:
+    def add(self, a, b):
+        return a + b
+    
+    def add_and_double(self, a, b):
+        # Calling another method using self
+        return self.add(a, b) * 2  </pre>
+</div>
+<h4><a name="Automatic_Self_when_Calling_Methods_">Automatic Self when Calling Methods
+
+</a>
+
+</h4>
+<p>When you call a method on an instance, Python automatically passes a reference 
+to the 
+instance as the first argument. You don't need to pass self explicitly.</p>
+<div class="a">
+<pre>person = Person("Alice")#Create an object of the class Person
+# Python automatically passes 'person' as 'self'
+person.greet()  </pre>
+</div>
+
+
+
+<p>This is equivalent to</p>
+<div class="a">
+<pre>Person.greet(person)  # Explicitly passing the instance</pre>
+</div>
+<h4><a name="Class_Methods_vs._Instance_Methods_">Class Methods vs. Instance Methods
+
+</a>
+
+</h4>
+<p>Regular methods (instance methods) automatically receive self. If you want a 
+method that doesn't need access to instance attributes, you can use a class 
+method or static method</p>
+<div class="a">
+<pre>class MyClass:
+    @classmethod
+    def class_method(cls):
+        # 'cls' is conventionally used instead of 'self' for class methods
+        print("This is a class method")
+    
+    @staticmethod
+    def static_method():
+        # No 'self' parameter for static methods
+        print("This is a static method")</pre>
+</div>
+
+
+
+<h2><a name="Inheritance_">Inheritance </a> </h2>
+<p>Inheritance allows you to create a new class based on an existing class, inheriting its attributes and methods. 
+Inheriting from a class is sometimes called extending a class.</p>
+<h3><a name="Example_Code">Example Code</a></h3>
+<p>Here's an example.</p>
+<div class="a">
+<pre>class Animal:
+    def __init__(self, species):
+        self.species = species
+    
+    def make_sound(self):
+        pass
+# End superclass definition
+
+class Cat(Animal): #Cat extends Animal
+    def __init__(self, name):
+        super().__init__("Cat")
+        self.name = name
+    
+    def make_sound(self): #Override make_sound method
+        return f"{self.name} says: Meow!"
+# End subclass definition and begin test code here.
+
+my_cat = Cat("Whiskers")
+print(my_cat.species)  # Output: Cat
+print(my_cat.make_sound())  # Output: Whiskers says: Meow!</pre>
+</div>
+<p>Let's break this example down and examine the various code fragments.</p>
+<h4><a name="Class_Definitions">Class Definitions</a></h4>
+
+
+
+<div class="a">
+<pre>class Animal:
+    def __init__(self, species):
+        self.species = species
+    
+    def make_sound(self):
+        pass</pre>
+</div>
+<p>This code fragment performs the following actions:</p>
+<ul>
+	<li>Defines a class named Animal.
+</li>
+	<li>Defines the constructor (__init__) method that takes self and species as parameters.
+	</li>
+	<li>Sets the species attribute of the instance to the provided species value.
+	</li>
+	<li>Defines a method make_sound() that does nothing (placeholder method). 
+	This is sometimes called an abstract method because it has no defined 
+	behavior.</li>
+</ul>
+<div class="a">
+<pre>class Cat(Animal):
+    def __init__(self, name):
+        super().__init__("Cat")
+        self.name = name
+    
+    def make_sound(self):
+        return f"{self.name} says: Meow!"</pre>
+</div>
+
+
+
+<p>This code fragment performs the following actions:</p>
+<ul>
+	<li>Defines a class Cat that inherits from (extends) Animal. 
+	Note that the name of the class being extended is passed as an argument in 
+	the constructor for the class named Cat.</li>
+	<li>Defines the constructor for Cat that takes self and name as parameters.
+	</li>
+	<li>Calls the superclass (Animal) constructor with "Cat" as the species.
+</li>
+	<li>Sets the name attribute of the instance to the provided name value.
+</li>
+	<li>Overrides the make_sound() method to return a string with the cat's name and sound.</li>
+</ul>
+<p>That ends the class definitions. </p>
+<h4><a name="Test_Code">Test Code</a></h4>
+<p>The beginning of the test code is shown 
+in the following fragment.</p><div class="a">
+<pre>my_cat = Cat("Whiskers")</pre>
+</div>
+<p>This code creates an instance (object) of the Cat class with the name 
+"Whiskers" and assign's the object's reference to the variable named my_cat.</p>
+<div class="a">
+<pre>print(my_cat.species)  # Output: Cat</pre>
+</div>
+
+
+
+<p>This fragment prints the species attribute of the object referred to by my_cat. This was set in the 
+Animal constructor by code in the Cat constructor.</p>
+<div class="a">
+<pre>print(my_cat.make_sound())  # Output: Whiskers says: Meow!</pre>
+</div>
+<p>This fragment calls the make_sound method on the object referred to by my_cat and prints the result.</p>
+<p>This code demonstrates </p>
+<ol>
+	<li>Inheritance (Cat inherits from or extends Animal), </li>
+	<li>Method overriding (Cat overrides make_sound()).</li>
+	<li>The use of super() to call the superclass constructor. </li>
+</ol>
+<p>It also shows how attributes set in the superclass (species) are accessible in the subclass instance.</p>
+<h3><a name="A_More_Interesting_Example">A More Interesting Example</a></h3>
+<p>Here is a slightly more interesting example where the Animal class defines a 
+concrete definition of the make_sound method. The Cat class extends the Animal 
+class and overrides the make_sound method. Test code then exercises the two 
+classes and demonstrates the effect of overriding a method.</p>
+<div class="a">
+<pre>class Animal:
+    def __init__(self, species, sound):
+        self.species = species
+        self.sound = sound
+    
+    def make_sound(self):
+        return f"This {self.species} makes a {self.sound} sound."
+
+class Cat(Animal):
+    def __init__(self, name):
+        super().__init__("Cat", "meow")
+        self.name = name
+    
+    def make_sound(self):
+        return f"{self.name} says: {self.sound.capitalize()}!"
+# End definitions and begin test code here.
+
+# Create instances and test
+generic_animal = Animal("dog", "woof")
+my_cat = Cat("Whiskers")
+
+print(generic_animal.make_sound())  # Output: This dog makes a woof sound.
+print(my_cat.species)               # Output: Cat
+print(my_cat.make_sound())          # Output: Whiskers says: Meow!</pre>
+</div>
+
+<p>Let's go through the details:
+
+</p>
+<ol>
+	<li>In the Animal class:
+
+	<ol>
+		<li>The __init__ method now takes an additional sound parameter.
+</li>
+		<li>We store both species and sound as instance attributes.
+</li>
+		<li>The make_sound method now returns a string using these attributes.
+		</li>
+	</ol>
+	</li>
+	<li>In the Cat class:
+
+	<ol>
+		<li>The __init__ method calls the superclass constructor with "Cat" as the species and "meow" as the sound.
+		</li>
+		<li>The make_sound method is overridden to provide a cat-specific implementation, using the name and sound attributes.
+		</li>
+	</ol>
+	</li>
+	<li>In the test code:
+
+	<ol>
+		<li>We create a generic animal (a dog) to demonstrate the Animal class's make_sound method.
+		</li>
+		<li>We create a cat instance as before.
+</li>
+		<li>We then demonstrate calling make_sound on both the generic animal and the cat.
+		</li>
+	</ol>
+	</li>
+</ol>
+<p>This version shows how a base class can provide a default implementation that subclasses can either use as-is (if appropriate) or override with more specific behavior. It also demonstrates how subclasses can leverage the attributes and methods of their superclass.</p>
+<h2><a name="Encapsulation">Encapsulation</a>
+
+</h2>
+<p>Encapsulation is the bundling of data and the methods that operate on that data within a single unit (class). It also involves restricting direct access to some of an object's components.</p>
+<h3><a name="Example Code2">Example Code</a></h3>
+<div class="a">
+<pre>class BankAccount:
+    def __init__(self, balance):
+        self._balance = balance  # Protected attribute
+    
+    def deposit(self, amount):
+        if amount &gt; 0:
+            self._balance += amount
+    
+    def withdraw(self, amount):
+        if 0 &lt; amount &lt;= self._balance:
+            self._balance -= amount
+    
+    def get_balance(self):
+        return self._balance
+# End class definition and begin test code here.
+
+account = BankAccount(1000)
+account.deposit(500)
+print(account.get_balance())  # Output: 1500</pre>
+</div>
+<p>Here's a detailed explanation of the above code.</p>
+<h4><a name="Class Definitions2">Class Definitions</a></h4>
+<div class="a">
+<pre>class BankAccount:</pre>
+</div>
+<ul>
+	<li>Define a class named BankAccount.</li>
+</ul>
+<div class="a">
+<pre>
+def __init__(self, balance):
+        self._balance = balance  # Protected attribute</pre>
+</div>
+
+
+
+<ul>
+	<li>Define the constructor method that takes self and balance as parameters.
+	</li>
+	<li>Initialize a protected attribute _balance with the given balance value. The underscore prefix is a convention indicating that this attribute should not be accessed directly from outside the class.</li>
+</ul>
+<div class="a">
+<pre>def deposit(self, amount):
+        if amount &gt; 0:
+            self._balance += amount</pre>
+</div>
+<ul>
+	<li>Define a deposit method that takes self and amount as parameters.
+</li>
+	<li>If the amount is greater than 0, add it to the _balance.</li>
+</ul>
+<div class="a">
+<pre>def withdraw(self, amount):
+        if 0 &lt; amount &lt;= self._balance:
+            self._balance -= amount</pre>
+</div>
+
+
+
+<ul>
+	<li>Define a withdraw method that takes self and amount as parameters.
+</li>
+	<li>If the amount is greater than 0 and less than or equal to the current _balance, subtract it from _balance.</li>
+</ul>
+<div class="a">
+<pre>def get_balance(self):
+        return self._balance</pre>
+</div>
+<ul>
+	<li>Define a get_balance method that returns the current value of _balance.</li>
+</ul>
+<h4><a name="Test Code2">Test Code</a></h4>
+<p>Begin the test code 
+here.</p>
+<div class="a">
+<pre>account = BankAccount(1000)</pre>
+</div>
+
+<ul>
+	<li>Create an instance (object) of BankAccount with an initial balance of 1000. 
+	Assign the object's reference to the variable named account.</li>
+</ul>
+<div class="a">
+<pre>account.deposit(500)</pre>
+</div>
+<p>Call the deposit method on the object referred to by account to add 500 to the balance.</p>
+<div class="a">
+<pre>print(account.get_balance())  # Output: 1500</pre>
+</div>
+
+<p>Call the get_balance method on the object referred to by account and print the result, which is 1500 (1000 initial + 500 deposited).</p>
+
+
+
+<h5>Synopsis</h5>
+<p>This code demonstrates encapsulation, a key principle of object-oriented programming. The _balance attribute is protected, and access to it is controlled through methods (deposit, withdraw, get_balance). This allows the class to enforce rules (like preventing negative deposits or overdrafts) and provides a clean interface for interacting with the account balance.</p>
+<p>Note however, that In Python, while a variable with a name like _balance is considered protected, 
+it is not truly private. By convention, a single underscore prefix (e.g., _balance) indicates that the variable is intended for internal use within the class or its subclasses. However, this is just a convention and does not enforce strict access control. The variable can still be accessed from outside the class, though it is generally discouraged.</p>
+<p>If you want to make a variable even more private, you can use a double underscore prefix (e.g., __balance). This triggers name mangling, which makes it harder (but not impossible) to access the variable from outside the class. 
+Even with name mangling, the variable can still be accessed using its mangled name.</p>
+<p>If you need for the privacy of instance variables to be strictly enforced, 
+you need to switch to a different programming language such as Java or C++.</p>
+<h2><a name="Polymorphism_">Polymorphism</a>
+
+</h2>
+<p>Polymorphism allows objects of different classes to be treated as objects of a common base class. </p>
+<h3><a name="Example Code3">Example Code</a></h3>
+<p>Here is some sample code.</p>
+<div class="a">
+<pre>class Shape:
+    def area(self):
+        pass
+# End class definition
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return self.width * self.height
+# End class definition</pre>
+	<pre>
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return 3.14 * self.radius ** 2
+# End class definition and begin test code
+
+shapes = [Rectangle(5, 3), Circle(2)]
+for shape in shapes:
+    print(f"Area: {shape.area()}")
+'''
+Output:
+Area: 15
+Area: 12.56
+'''
+</pre>
+</div>
+
+<p>Here is a detailed explanation of the above code.</p>
+
+
+
+<h4><a name="Class Definitions3">Class Definitions</a></h4>
+<h5>Shape Class</h5>
+<div class="a">
+<pre>class Shape:
+    def area(self):
+        pass
+</pre>
+</div>
+<ul>
+	<li>Purpose: This is a base class (or abstract class) that defines a common interface for all shapes.
+	</li>
+	<li>Approach: The area method is defined but not implemented (pass is a placeholder). This method is intended to be overridden by subclasses.</li>
+</ul>
+<h5>Rectangle Class</h5>
+<div class="a">
+<pre>class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return self.width * self.height
+</pre>
+</div>
+
+
+
+<ul>
+	<li>Inheritance: Rectangle inherits from Shape.
+</li>
+	<li>Constructor: The __init__ method initializes the width and height attributes.
+	</li>
+	<li>Approach: The area method calculates the area of the rectangle using the formula width * height.</li>
+</ul>
+<h5>Circle Class</h5>
+<div class="a">
+<pre>class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return 3.14 * self.radius ** 2
+</pre>
+</div>
+<ul>
+	<li>Inheritance: Circle inherits from Shape.
+</li>
+	<li>Constructor: The __init__ method initializes the radius attribute.
+</li>
+	<li>Approach: The area method calculates the area of the circle using the formula π * radius^2 (approximating π as 3.14).</li>
+</ul>
+<h4><a name="Test Code3">Test Code</a></h4>
+<h5>Creating Instances</h5>
+<div class="a">
+<pre>shapes = [Rectangle(5, 3), Circle(2)]
+</pre>
+</div>
+
+
+
+<ul>
+	<li>List of Shapes: A list named shapes is created, containing instances of Rectangle and Circle.
+	</li>
+	<li>Rectangle Instance: Rectangle(5, 3) creates a rectangle with a width of 5 and a height of 3.
+	</li>
+	<li>Circle Instance: Circle(2) creates a circle with a radius of 2.</li>
+</ul>
+<h5>Calculating and Printing Areas</h5>
+<div class="a">
+<pre>for shape in shapes:
+    print(f"Area: {shape.area()}")
+</pre>
+</div>
+<ul>
+	<li>Loop: Iterates over each shape in the shapes list.
+</li>
+	<li>Method Call: Calls the area method on each shape instance.
+</li>
+	<li>Output: Prints the area of each shape.</li>
+</ul>
+<h4><a name="Output">Output</a></h4>
+<ul>
+	<li>For the Rectangle with width 5 and height 3:
+	<ul>
+		<li>Area = 5 * 3 = 15 </li>
+	</ul>
+	</li>
+	<li>For the Circle with radius 2: 
+	<ul>
+		<li>Area = 3.14 * 2^2 = 3.14 * 4 = 12.56 </li>
+	</ul>
+	</li>
+</ul>
+<p>So, the output will be:</p>
+<div class="a">
+<pre>Area: 15
+Area: 12.56
+</pre>
+</div>
+
+<h4><a name="Synopsis">Synopsis</a></h4>
+
+
+
+<p>This code demonstrates the use of inheritance and polymorphism in Python. The Shape class provides a common interface, and the Rectangle and Circle classes implement the area method in their own way. The test code shows how you can work with a list of different shapes and call the area method on each one, without needing to know the specific type of shape. 
+That is what polymorphism is all about.</p>
+<h2><a name="Run_the_Code">Run the Code</a></h2>
+<p>I encourage you to copy and run the code shown in the above examples. Experiment with the code, making changes, and observing the results of your changes. Make certain that you can explain why your changes behave as they do.</p>
+
+<h2><a name="Miscellaneous">Miscellaneous</a></h2>
+<div class="a">
+			<ul>
+				<li>Lesson name: G0102: Object-Oriented Programming (OOP) in Python</li>
+				<li>File: G0102.OOP.htm</li>
+				<li>Revised: 02/19/26</li>
+			</ul>
+</div>
+
+<p>-end- </p>
+
+
+
+
+
+</body>
+</html>

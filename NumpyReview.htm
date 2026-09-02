@@ -1,0 +1,523 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ITSE 1302 Numpy</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+a:hover {color: #00ff00;}
+
+pre {color: navy;}
+p{color:teal;}
+h1{color:green}
+h2{color: purple}
+h3{color: orange}
+h4{color: fuchsia}
+h5{color: green}
+h6{color: cyan}
+blockquote{color: purple}
+ul{color: BlueViolet}
+ol{color: BlueViolet}
+body{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12pt;
+	background-color: #FEFFF0;}
+.auto-style5 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+
+<h1 class="auto-style5">Numpy Review Questions
+</h1>
+
+<h1 class="style1">Table of Contents</h1>
+<ul>
+	<li><a href="#Preface">Preface</a></li>
+	<li><a href="#Questions">Questions</a>
+	<ul>
+		<li><a href="#question01">1</a>, <a href="#question02">2</a>,
+		<a href="#question03">3</a>, <a href="#question04">4</a>,
+		<a href="#question05">5</a>, <a href="#question06">6</a>,
+		<a href="#question07">7</a>, <a href="#question08">8</a>,
+		<a href="#question09">9</a>, <a href="#question10">10</a>, 
+		<a href="#question11">11</a>, <a href="#question12">12</a>, 
+		<a href="#question13">13</a>, 
+		<a href="#question14">14</a>, 
+		<a href="#question15">15</a>,
+		<a href="#question16">16</a>,
+		<a href="#question17">17</a>, 
+		<a href="#question18">18</a>,
+		<a href="#question19">19</a>,
+		<a href="#question20">20</a>,
+		<a href="#question21">21</a>,
+		<a href="#question22">22</a>,
+		<a href="#question23">23</a>,
+		<a href="#question24">24</a>,
+		<a href="#question25">25</a>
+		
+		</li>
+	</ul>
+	</li>
+
+
+	<li><a href="#Answers">Answers</a></li>
+	<li><a href="#Houskeeping_material">Houskeeping material</a></li>
+</ul>
+<h1><a name="Preface">Preface</a></h1>
+<p>This page contains review questions for teaching <strong>ITSE-1302 Computer Programming: Scientific Python 1</strong> at Austin Community College in 
+Austin, TX.</p>
+<p>The questions and the answers on this page are connected by hyperlinks to 
+make it easy for you to navigate from the question to the answer and back again.</p>
+<p>The questions on this page are similar to the questions that you will find on 
+the test for this competency. Therefore, it is strongly recommended that you 
+study the material until you thoroughly understand the material covered by these 
+questions.</p>
+<h1><a name="Questions">Questions</a></h1>
+
+<h2><a name="question01">Question 1</a><b>. </b> </h2>
+<p>True or False: You will often see a numpy array referred to as an ndarray. This name derives from the fact that an ndarray is an N-dimensional array.</p>
+
+<p><a href="#answer01">Answer 1</a> </p>
+
+<h2><a name="question02">Question 2</a></h2>
+<p>True or False: The conventional way to import the numpy library into a program is as shown below:
+
+</p>
+<p>import numpy as npArray</p>
+<p><a href="#answer02">Answer 2</a> </p>
+
+<h2><a name="question03">Question 3</a> </h2>
+<p>True or False: The following code creates a one-dimensional array and prints its contents.
+
+</p>
+<p>myArray = np.array([1,2,3])
+<br>
+print(myArray)</p>
+<p><a href="#answer03">Answer 3</a> </p>
+
+<h2><a name="question04">Question 4</a></h2>
+<p>True or False: The easiest way to access the elements in an array is to use parentheses just like accessing the elements of a list as shown below:
+
+</p>
+<p>myArray = np.array([1,2,3])
+<br>print(myArray(2),myArray(1),myArray(0))</p>
+<p><a href="#answer04">Answer 4</a> </p>
+
+<h2><a name="question05">Question 5</a></h2>
+<p>True or False: Numpy arrays are immutable.</p>
+<p><a href="#answer05">Answer 5</a></p>
+
+<h2><a name="question06">Question 6</a></h2>
+<p>True or False: All of the elements in a numpy array must be of the same type.</p>
+<p><a href="#answer06">Answer 6</a> </p>
+
+<h2><a name="question07">Question 7</a></h2>
+<p>True or False: </p>
+<p>The following code is a valid way to create a two-dimensional numpy array.</p>
+<p>myArray = np.array([['r0-c0','r0-c1','r0-c2'],['r1-c0','r1-c1','r1-c2']])</p>
+<p><a href="#answer07">Answer 7</a></p>
+
+<h2><a name="question08">Question 8</a> </h2>
+<p>True or False: Just like a list, a numpy array supports the append method.</p>
+
+
+<p><a href="#answer08">Answer 8</a> </p>
+
+<h2><a name="question09">Question 9</a></h2>
+<p>True or False: Just like with Python lists, adding one numpy array to another 
+numpy array using the plus (+) operator results in a longer array, which is the 
+concatenation of the two original arrays.</p>
+<p><a href="#answer09">Answer 9</a> </p>
+
+<h2><a name="question10">Question 10</a></h2>
+<p>True or False: The result of multiplying a numpy array by a scalar is that 
+each element in the array is individually multiplied by the scalar.</p>
+<p><a href="#answer10">Answer 10</a></p>
+	
+<h2><a name="question11">Question 11</a></h2>
+<p>True or False: You can square and take the square root of a numpy array 
+containing numeric data.</p>
+<p><a href="#answer11">Answer 11</a></p>
+	
+<h2><a name="question12">Question 12</a></h2>
+<p>True or False: Multi-dimensional arrays of the same size and shape can be 
+multiplied on an element-by-element basis.</p>
+<p><a href="#answer12">Answer 12</a></p>
+	
+<h2><a name="question13">Question 13</a></h2>
+<p>True or False: The following code creates an array with five rows and three 
+columns populated with random values.</p>
+<p>myRandomArray = np.random.random((5,3))</p>
+<p><a href="#answer13">Answer 13</a></p>
+	
+<h2><a name="question14">Question 14</a></h2>
+<p>True or False: The following code creates an array with two rows and three 
+columns where every element contains the string 'hello'.</p>
+<p>myNonZeroArray = np.full((2,3),'hello')</p>
+<p><a href="#answer14">Answer 14</a></p>
+	
+<h2><a name="question15">Question 15</a></h2>
+<p>True or False: The following code can be used to create a matrix-style array 
+with a 1. in each diagonal position and a 0. in every other position.</p>
+<p>mySpecialMatrix = np.ones(4,4)</p>
+<p><a href="#answer15">Answer 15</a></p>
+	
+<h2><a name="question16">Question 16</a></h2>
+<p>True or False: You can access an array using slicing in much the same way 
+that you can use slicing to access the elements in a list. This is a mechanism 
+by which you can extract a subarray from an array.</p>
+<p><a href="#answer16">Answer 16</a></p>
+
+<h2><a name="question17">Question 17</a></h2>
+<p>True or False: The two statements shown below for slicing an array produce 
+the same result.</p>
+<p>mySubArray = myArray[0:2, 1:3]<br>mySubArray = np.array(myArray[0:2, 1:3])</p>
+<p><a href="#answer17">Answer 17</a></p>
+
+<h2><a name="question18">Question 18</a></h2>
+<p>True or False: The following code will compute and display the statistical 
+mean of all the elements in the array:</p>
+<p>myArray = np.array([[1,2,3],[4,5,6],[7,8,9],[10,11,12]])<br>print(np.median(myArray))</p>
+<p><a href="#answer18">Answer 18</a></p>
+
+<h2><a name="question19">Question 19</a></h2>
+<p>True or False: The sort method of a numpy array creates a new array and sorts 
+the new array, leaving the original array untouched.</p>
+<p><a href="#answer19">Answer 19</a></p>
+
+<h2><a name="question20">Question 20</a></h2>
+<p>True or False: The intersect1d method of a numpy array finds the intersection 
+of two arrays and returns the sorted, unique values that are in both of the 
+input arrays in a one-dimensional array. </p>
+<p><a href="#answer20">Answer 20</a></p>
+
+<h2><a name="question21">Question 21</a></h2>
+<p>True or False: The union1d method of a numpy array finds the union of two 
+arrays and returns the unique, two-dimensional sorted array of values that are 
+in either of the two input arrays. </p>
+<p><a href="#answer21">Answer 21</a></p>
+
+<h2><a name="question22">Question 22</a></h2>
+<p>True or False: The setdiff1d(ar1,ar2) method of a numpy array finds the set 
+difference of two arrays and returns a one-dimensional array containing the 
+sorted, unique values in ar1 that are not in ar2.</p>
+<p><a href="#answer22">Answer 22</a></p>
+
+<h2><a name="question23">Question 23</a></h2>
+<p>True or False: The setxor1d method of a numpy array finds the set 
+exclusive-or of two arrays and returns a one-dimensional array containing the 
+sorted, unique values that are in both of the input arrays. </p>
+<p><a href="#answer23">Answer 23</a></p>
+
+<h2><a name="question24">Question 24</a></h2>
+<p>True or False: Broadcasting allows you to perform arithmetic operations on 
+arrays of different shapes. "Subject to certain constraints, the smaller array 
+is “broadcast” across the larger array so that they have compatible shapes." </p>
+<p><a href="#answer24">Answer 24</a></p>
+
+<h2><a name="question25">Question 25</a></h2>
+<p>True or False: A one-dimensional array can be treated as a vector in linear 
+algebra. The sum of the products of two vectors is something called the cross 
+product.</p>
+<p><a href="#answer25">Answer 25</a></p>
+
+
+
+
+
+
+<hr/>
+<h1><a name="Answers">Answers</a></h1>
+
+
+
+
+
+
+
+<h2><a name="answer25">Answer 25</a></h2>
+<p>False.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Computing the dot product</p>
+<p>A one-dimensional array can be treated as a vector in linear algebra. The sum 
+of the products of two vectors is something called the <strong>dot product</strong>. 
+A cross product is something entirely different.</p>
+
+
+<p><a href="#question25">Back to Question 25</a> </p>
+
+<h2><a name="answer24">Answer 24</a></h2>
+<p>True.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Broadcasting</p>
+<p>See the general broadcasting rules at
+<a href="https://docs.scipy.org/doc/numpy-1.13.0/user/basics.broadcasting.html">
+https://docs.scipy.org/doc/numpy-1.13.0/user/basics.broadcasting.html</a>. </p>
+
+
+<p><a href="#question24">Back to Question 24</a> </p>
+
+<h2><a name="answer23">Answer 23</a></h2>
+<p>False.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Exclusive or</p>
+<p>The setxor1d method finds the set exclusive-or of two arrays and returns a 
+one-dimensional array containing the sorted, unique values that are in <strong>
+only one (not both) </strong>of the input arrays. </p>
+
+
+<p><a href="#question23">Back to Question 23</a> </p>
+
+<h2><a name="answer22">Answer 22</a></h2>
+<p>True.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Difference</p>
+
+
+<p><a href="#question22">Back to Question 22</a> </p>
+
+<h2><a name="answer21">Answer 21</a></h2>
+<p>False.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Union</p>
+<p>The union1d method finds the union of two arrays and returns the unique,
+<strong>one-dimensional</strong> sorted array (not two-dimensional) of values 
+that are in either of the two input arrays. </p>
+
+
+<p><a href="#question21">Back to Question 21</a> </p>
+
+<h2><a name="answer20">Answer 20</a></h2>
+<p>True. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Intersection</p>
+
+
+
+<p><a href="#question20">Back to Question 20</a> </p>
+
+<h2><a name="answer19">Answer 19</a></h2>
+<p>False. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Sorting a one dimensional array</p>
+<p>The array sort method is an in-place sort. This means that the method 
+modifies the array on which it is called.</p>
+
+
+<p><a href="#question19">Back to Question 19</a> </p>
+
+<h2><a name="answer18">Answer 18</a></h2>
+<p>False. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Mean values, sums, and medians</p>
+<p>The code shown will compute the statistical median of all the elements in the 
+array, not the statistical mean.</p>
+
+
+<p><a href="#question18">Back to Question 18</a> </p>
+
+<h2><a name="answer17">Answer 17</a></h2>
+<p>False. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Modify an element in the subarray and Extract a subarray 
+into an independent array</p>
+<p>When you extract a subarray by slicing an array using the first statement 
+shown above, you don't create a new array. Instead you simply create a new 
+reference to a rectangular portion of the original array. If you modify an 
+element in the subarray, you are in fact modifying an element in the original 
+array. </p>
+<p>The second statement extracts a rectangular portion of the original array 
+into a new subarray that is independent of the original array. If you modify an 
+element in the new subarray, you will not modify an element in the original 
+array.</p>
+<p>This is a very important distinction that can lead to subtle programming 
+errors if not fully understood and taken into account when programming.</p>
+
+
+<p><a href="#question17">Back to Question 17</a> </p>
+
+<h2><a name="answer16">Answer 16</a></h2>
+<p>True. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Extract a subarray by slicing</p>
+
+
+<p><a href="#question16">Back to Question 16</a> </p>
+
+
+
+<h2><a name="answer15">Answer 15</a></h2>
+<p>False. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - A matrix with ones on the diagonal and zeros elsewhere</p>
+<p>The correct code for this purpose is shown below:</p>
+<p>mySpecialMatrix = np.eye(4,4)</p>
+<p>Note the name of the method. The method named ones is used to create an array 
+and put a float 1.0 in each array element - see An array full of ones.</p>
+
+
+<p><a href="#question15">Back to Question 15</a> </p>
+
+
+<h2><a name="answer14">Answer 14</a></h2>
+<p>True.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Create an array full of other values</p>
+<p>The full method takes two arguments. The first argument is a tuple that 
+specifies the dimensions of the desired array. The second argument specifies the 
+value that is to be put into each element in the array. </p>
+
+
+<p><a href="#question14">Back to Question 14</a> </p>
+
+
+<h2><a name="answer13">Answer 13</a></h2>
+<p>True.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Create an array full of random values</p>
+<p>Note that the syntax of the statement lacks the typical <strong>np.array</strong> 
+term.</p>
+
+
+<p><a href="#question13">Back to Question 13</a> </p>
+
+
+<h2><a name="answer12">Answer 12</a></h2>
+<p>True. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Multiplication of lists and arrays</p>
+
+
+<p><a href="#question12">Back to Question 12</a> </p>
+
+<h2><a name="answer11">Answer 11</a></h2>
+<p>True.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Squares and square roots</p>
+<p>You can square and take the square root of an array containing numeric data. 
+When you do, the result is a set of new values in the array with the operation 
+having been performed on an element-by-element basis.</p>
+
+
+<p><a href="#question11">Back to Question 11</a> </p>
+
+
+<h2><a name="answer10">Answer 10</a></h2>
+<p>True.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Multiplication by a scalar</p>
+
+
+<p><a href="#question10">Back to Question 10</a> </p>
+
+
+
+<h2><a name="answer09">Answer 9</a> </h2>
+<p>False.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Addition of lists and arrays</p>
+<p>The plus sign with lists does concatenation but the plus sign with arrays 
+does element-by-element addition (vector addition). Many of the functions 
+available for processing arrays operate on an element-by-element basis.</p>
+
+
+<p><a href="#question09">Back to Question 9</a> </p>
+<h2><a name="answer08">Answer 8</a> </h2>
+<p>False. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - The append method</p>
+<p>You cannot append a value to an array by calling the append method on the 
+array. An attempt to do so will throw an error. Once created, the size of an 
+array is fixed.</p>
+
+
+
+
+
+<p><a href="#question08">Back to Question 8</a> </p>
+<h2><a name="answer07">Answer 7</a> </h2>
+<p>True.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - A two-dimensional array</p>
+
+
+
+<p><a href="#question07">Back to Question 7</a> </p>
+
+<h2><a name="answer06">Answer 6</a></h2>
+<p>True.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - All of the elements in a numpy array must be of the same 
+type</p>
+<p>Sometimes when you try to mix types in a numpy array, one type will be 
+converted into the other type and an error will not be thrown. Other times, an 
+error will be thrown. This probably depends on whether or not one type can be 
+converted into the other type.</p>
+
+
+<p><a href="#question06">Back to Question 6</a> </p>
+
+
+<h2><a name="answer05">Answer 5</a></h2>
+<p>False.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Arrays are mutable.</p>
+
+
+<p><a href="#question05">Back to Question 5</a> </p>
+<h2><a name="answer04">Answer 4</a> </h2>
+<p> False. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Accessing an array with an index</p>
+<p>The easiest way to access the elements in an array is to use <strong>square 
+brackets</strong> just like accessing the elements of a list as shown below:</p>
+<p>myArray = np.array([1,2,3])</p>
+<p>print(myArray[2],myArray[1],myArray[0])</p>
+
+
+<p><a href="#question04">Back to Question 4</a> </p>
+<h2><a name="answer03">Answer 3</a> </h2>
+<p>True.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - Creating a numpy array</p>
+
+
+<p><a href="#question03">Back to Question 3</a> </p>
+<h2><a name="answer02">Answer 2</a></h2>
+<p>False.</p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - introductory section </p>
+<p>The conventional way to import the numpy library into a program is as shown below:
+
+</p>
+<p>import numpy as np</p>
+
+<p><a href="#question02">Back to Question 2</a> </p>
+
+
+<h2><a name="answer01">Answer 1</a> </h2>
+<p>True. </p>
+<p><strong>Explanation</strong></p>
+<p>See NumpPy Arrays - introductory section</p>
+
+<p><a href="#question01">Back to Question 1</a> </p>
+
+<h1><a name="Houskeeping_material">Houskeeping material</a></h1>
+<p>File name: NumpyReview.htm</p>
+<p>Revised: 04/24/18</p>
+<p>Copyright 2018, Richard Baldwin</p>
+<p>-end- </p>
+
+
+</body>
+</html>

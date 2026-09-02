@@ -1,0 +1,120 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>StatMeanMod01.htm</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+p{color:black;}
+h1{color:green}
+h2{color: purple}
+h3{color: gray}
+b{color: #000000}
+strong{color: #000000}
+blockquote{color: purple}
+ul{color: maroon}
+ol{color: maroon}
+table{border: 1px solid black}
+th{border: 1px solid black}
+a:hover {
+	color: #cc0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.auto-style1 {
+	text-align: center;
+}
+div.a {
+  border: 2px solid black;
+
+}
+div.a {
+  border: 2px solid black;
+}
+</style>
+</head>
+
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 12pt; background-color: #FEFFF0;"
+>
+<h1 class="auto-style1">Modifying the Mean and the Standard Deviation</h1>
+
+
+<h2>Table of Contents</h2>
+<ul>
+	<li><a href="#Discussion">Discussion</a><ul>
+		<li><a href="#Subtract_the_mean_and_multiply_by_a_constant">Subtract the mean and multiply by a constant
+		</a></li>
+		<li><a href="#Multiplication_by_-1">Multiplication by -1</a></li>
+		<li><a href="#Adding_a_constant">Adding a constant</a></li>
+	</ul>
+	</li>
+	<li><a href="#References">References</a></li>
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+</ul>
+	<h2><a name="Discussion">Discussion</a></h2>
+<h3><a name="Subtract_the_mean_and_multiply_by_a_constant">Subtract the mean and 
+multiply by a constant</a></h3>
+<p>According to ChatGPT, Subtracting the mean value from every value in a dataset is called centering, and it results in a dataset with a mean of zero. This is done to remove any bias or offset in the data, making it easier to analyze and compare with other datasets.
+
+</p>
+<p>Multiplying every value in the dataset by a constant is called scaling or normalization, and it results in a dataset with a new range of values. If the constant is greater than 1, it will increase the magnitude of the values, making them larger, and if it's less than 1, it will decrease the magnitude of the values, making them smaller.
+
+</p>
+<p>So, if you first center the data by subtracting the mean, and then scale it by multiplying every value by a constant, you will get a new dataset with a different range of values, but with the same relative relationships between the values as the original dataset. This can be useful for comparing datasets that have different units or ranges of values.</p>
+<p>Subtracting the mean from every value in the dataset does not change the variance or standard deviation of the data. This is because variance and standard deviation are measures of how spread out the data is from the mean, and centering the data does not change the spread of the data.
+
+</p>
+<p>On the other hand, multiplying every value in the dataset by a constant does affect both the variance and standard deviation. Specifically, multiplying each value by a constant will result in the variance being multiplied by the square of that constant and the standard deviation being multiplied by that constant.
+
+</p>
+<p>For example, if you multiply every value in a dataset by 2, the variance will be multiplied by 4 (i.e., 2^2), and the standard deviation will be multiplied by 2. This means that the data will be more spread out than before, as both the variance and standard deviation will be larger. Conversely, if you multiply every value in a dataset by a number between 0 and 1, the variance and standard deviation will both decrease, making the data less spread out.</p>
+<h3><a name="Multiplication_by_-1">Multiplication by -1</a></h3>
+<p>If you multiply every value in a dataset by -1, it will invert the values of 
+the dataset, i.e., positive values become negative, and negative values become 
+positive.
+
+</p>
+<p>The variance and standard deviation of the dataset will not change when you multiply every value in the dataset by -1 because variance and standard deviation are measures of how spread out the data is from the mean, and inverting the data does not change the spread of the data. However, the skewness of the data may change, as it measures the asymmetry of the distribution. Inverting the data can change the direction of the skewness, from positive to negative or vice versa.</p>
+<p>Multiplying every value in a dataset by -1 will reflect the data about the 
+y-axis, which means that the histogram of the dataset will also be reflected. 
+The shape of the histogram will remain the same, but the appearance will be that 
+of a mirror image.</p>
+<p>For example, if the original histogram had a peak on the right side, reflecting the data will result in a peak on the left side. Similarly, if the original histogram was skewed to the right, reflecting the data will result in a left-skewed histogram.
+
+</p>
+<p>In general, reflecting the data will not change any of the properties of the histogram, such as the number of bars, their height, or their width. It will only change the direction of the bars. However, it is worth noting that reflecting the data may make it easier or harder to interpret the histogram, depending on the context.</p>
+<h3><a name="Adding_a_constant">Adding a constant</a></h3>
+<p>Adding a constant to every value in a dataset will shift the entire distribution of the dataset by that constant. The shape and spread of the data will remain the same, but all the values will be increased or decreased by the same amount. This operation does not change the relative relationships between the values in the dataset.
+
+</p>
+<p>If you add a positive constant to every value in the dataset, the histogram of the dataset will be shifted to the right by the same amount. This means that the x-axis values of the bars will be increased by the constant, but the height and width of the bars will remain the same. On the other hand, if you add a negative constant to every value in the dataset, the histogram of the dataset will be shifted to the left by the same amount.
+
+</p>
+<p>In general, adding a constant to every value in a dataset will not change the shape or spread of the data, but it will change the location of the distribution on the x-axis, and thus, the appearance of the histogram. This operation is useful for changing the origin of the data, or for comparing datasets with different origins or units.
+</p>
+<h2><a name="References">References</a></h2>
+<p>These topics are discussed and illustrated with code in the lesson titled 
+<a href="StatisticsPart03.html">Statistics Exercises Part 3</a>.</p>
+	<h2><a name="Miscellaneous">Miscellaneous</a></h2>
+	<p>This section contains a variety of miscellaneous information.</p>
+
+<div class="a"><p>Housekeeping material</p>
+				
+<ul>
+					<li>Author: Prof. Richard G. Baldwin</li>
+					<li>Lesson name: Modifying the Mean and the Standard Deviation</li>
+					<li>File: StatMeanMod01.htm</li>
+					<li>Reviewed:02/22/26</li>
+				</ul>
+</div>
+	<p>-end- </p>
+
+
+</body>
+</html>

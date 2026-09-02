@@ -1,0 +1,422 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ITSE 1302 Building your Python scientific system from scratch</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+a:hover {color: #00ff00;}
+
+pre {color: black;}
+p{color:black;}
+h1{color:black}
+h2{color: black}
+h3{color: black}
+h4{color: black}
+h5{color: black}
+h6{color: black}
+blockquote{color: purple}
+ul{color: black}
+ol{color: black}
+body{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12pt;
+	background-color: #ffffff;}
+.auto-style3 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+<h1 class="auto-style3">Building your Python scientific system from scratch</h1>
+<h1>Table of contents</h1>
+<ul>
+	<li><a href="#Introduction">Introduction</a></li>
+	<li><a href="#Command-line_operations">Command-line operations</a></li>
+	<li><a href="#Download_and_install_Python">Download and install Python</a></li>
+	<li><a href="#Confirm_your_Python_installation">Confirm your Python installation</a></li>
+	<li><a href="#Confirm_PIP_availability">Confirm PIP availability</a></li>
+	<li><a href="#Install_Jupyter_Notebook">Install Jupyter Notebook</a></li>
+	<li><a href="#Confirm_your_Jupyter_Notebook_installation">Confirm your Jupyter Notebook installation</a></li>
+	<li><a href="#Install_the_matplotlib_library">Install the matplotlib library</a></li>
+	<li>
+	<a href="#Confirm_your_matplotlib,_numpy,_and_Jupyter_Notebook_installations">Confirm your matplotlib, numpy, and Jupyter Notebook installations</a><ul>
+		<li><a href="#Confirm_in_a_stand-alone_mode">Confirm in a stand-alone mode</a></li>
+		<li><a href="#Confirm_in_Jupyter_Notebook">Confirm in Jupyter Notebook</a></li>
+	</ul>
+	</li>
+	<li><a href="#Install_the_pandas,_seaborn,_and_scipy_libraries">Install the pandas, seaborn, and scipy 
+	libraries</a></li>
+	<li><a href="#Confirm_the_installations">Confirm the installations</a></li>
+	<li><a href="#Housekeeping_material">Housekeeping material</a></li>
+
+</ul>
+<h1><a name="Introduction">Introduction</a></h1>
+<p>As mentioned in the earlier <a href="Overview.1302.htm">Overview</a> document, there are 
+some advantages to downloading and running
+<a href="https://winpython.github.io/">WinPython</a>. In particular, with that 
+version you can easily move your projects among different computers. However, if 
+you don't need to do that and you are running Windows, you may find it 
+advantageous to download and install Python and then download and install the 
+appropriate packages. One advantage of doing this is that it makes it easier to 
+use the built-in IDLE IDE to create, edit, and execute Python scripts.</p>
+<p>Even if you decide not to build your own Python scientific development 
+environment, you may find the material in this lesson educational.</p>
+<p>This document provides instructions for building your Python scientific 
+system from scratch on a Windows machine. Hopefully if you are not running 
+Windows, you can translate these instructions into the proper steps for your 
+operating system.</p>
+<h1><a name="Command-line_operations">Command-line operations</a></h1>
+<p>These instructions will require you to do some command-line operations. If 
+you are unfamiliar with the command line, you may find it useful to review the 
+following web page:
+<a href="https://www.davidbaumgold.com/tutorials/command-line/">Getting to Know 
+the Command Line</a>.</p>
+<p>Several of the instructions will tell you to open a command-line window in a 
+particular folder. Here is an easy way to do that if you are running Windows.</p>
+<p>Use a text editor such as Notepad or <a href="https://notepad-plus-plus.org/">
+Notepad++</a> to create a batch file named <strong>aacmd.bat</strong> in the 
+folder of interest. <em>(Make sure the file is <strong>NOT</strong> named
+<strong>aacmd.bat.txt</strong>, which can happen sometimes with Notepad.)</em> 
+Put the following two lines of text in the file:</p>
+<pre>
+echo off
+cmd
+</pre>
+<p>When you double-click on that file in Windows Explorer, a command-line window 
+should open in that folder similar to the one shown below. <em>(If the double 
+click simply causes the file to open, it probably has a hidden extension of 
+.txt.)</em></p>
+<p><img alt="commandline01.jpg" height="238" src="commandline01.jpg" width="416"/></p>
+
+<p>The image shown above displays text similar to the following.</p>
+<pre>
+M:\jnk\6>echo off
+Microsoft Windows [Version 10.0.26200.7840]
+(c) Microsoft Corporation. All rights reserved.
+
+M:\jnk\6&gt;
+</pre>
+
+<p>You should only need to create the file once. Once you have created the file, 
+you can copy it from folder to folder to open command-line windows in 
+different folders. The text shown above identifies the folder in which the 
+command-line window is opened along with version of Windows. It ends with a 
+command prompt ready for you to use.</p>
+<h1><a name="Download_and_install_Python">Download and install Python</a></h1>
+<p>Your computer must be connected to the Internet for any of the installations 
+described in this document to be possible.</p>
+<p>If you already have Python installed on your system, and you are installing a 
+later version, it would be a good idea to <strong>uninstall</strong> all existing versions first 
+in order to avoid issues that involve multiple versions.</p>
+<p>Here are the steps for downloading and installing Python on a Windows 
+machine. These instructions are current as of 03/20/24. The required steps may 
+change in the future. <em>(Note that these instruction purposely do not install the program 
+in the default folder. I do that to shorten and simplify the path to the 
+executable and to prevent that path from containing space characters.)</em></p>
+<ol>
+	<li>Go to <a href="https://www.python.org/">https://www.python.org/</a> </li>
+	<li>Hover on the <strong>Downloads</strong> tab. A popup window should appear. 
+	Select <strong>Windows</strong>.</li>
+	<li>Click <strong>Python 3.x.y</strong> under <strong>Download for Windows</strong>
+	<em>(where 3.x.y represents the Python version)</em> </li>
+	<li>Select <strong>Windows Installer (64-bit)</strong> and save the file.</li>
+	<li>Open <strong>C:</strong> on your computer.</li>
+	<li>Create a folder named <strong>ProgramFiles</strong> in the root directory on C:
+	<em>(note there is no space in the name of the folder)</em>.</li>
+	<li>Create a folder named <strong>Python3xy</strong> in the <strong>ProgramFiles</strong> 
+folder where xy represents the version 
+of Python that you will be installing <em>(Python3121 for example).</em></li>
+
+	<li>Find the file that was downloaded from the Python website, double click the file, and run it. The file name 
+should be something similar to <strong>python-3.12.1-amd64.exe</strong>.
+</li>
+	<li>When the installation dialog appears, check the box that reads something like 
+	"<strong>Add Python.exe to PATH</strong>".
+</li>
+	<li>Select the link to "<strong>Customize installation</strong>".
+</li>
+	<li>Make sure all optional features are selected and click "<strong>Next</strong>".
+</li>
+	<li>Accept the pre-checked Advanced Options and "Browse" to the folder named 
+	<strong>Python3xy</strong> 
+that you created earlier.
+<em>(Note that this not the default installation folder.). </em>Also check the 
+	box for "<strong>Install Python x.y for all users"</strong> if you want that 
+	to be the case. Click <strong>OK</strong>.</li>
+	<li>Click "<strong>Install</strong>" and select "<strong>Yes</strong>" on the <strong>User Account Control window</strong>.
+	<em>(You must have administrator privileges to do the installation.)</em></li>
+	<li>Be very patient as the installation may take a while. Click "Close" on the "Setup was successful" screen.
+</li>
+</ol>
+<p>
+At this point you should be able to open the folder named <strong>Python3xy</strong> and see that 
+Python has been installed.
+</p>
+<h1>
+<a name="Confirm_your_Python_installation">Confirm your Python installation</a></h1>
+<p>
+The following operations can 
+be used to confirm a successful installation. </p>
+<p>
+Much of the material that follows was taken from 
+the following web pages: 
+<a href="https://packaging.python.org/tutorials/installing-packages/">Installing Packages</a>
+and <a href="http://jupyter.readthedocs.io/en/latest/install.html#">Installing 
+Jupyter Notebook</a>. Take a look at those pages for help if you experience 
+problems.</p>
+<p>
+Open a command-line window 
+in some arbitrary folder and enter the following command:
+</p>
+<pre>python --version </pre>
+<p>This should produce an output on the screen similar to the following, but it 
+may differ depending on the version that you have installed:
+</p>
+<pre>Python 3.12.1</pre>
+<p>This is where things may become complicated. If you have multiple versions of 
+Python installed on your computer, the output shown above may refer to a 
+different version than the one that you just installed and in which you are currently interested. In that 
+case, the easiest solution is to uninstall all of the versions other than the 
+one in which you are currently interested and then repeat the command.</p>
+<p>If the output refers to the version in which you are currently interested, 
+skip down to continue with the steps listed <a href="#ensure_that_you">below</a>. 
+If not, this indicates that you have a problem with the Windows "<strong>path</strong>". </p>
+<p>While it is possible to manually fix the path problem, it can be complicated 
+and dangerous. <em>(A minor mistake can have serious consequences.)</em> 
+Probably the easiest and safest way to correct the problem is to uninstall all 
+versions of Python from your system (including the one that you just installed) 
+and reinstall the version of interest. When you do, be sure to check the box 
+that reads something like "<strong>Add Python.exe to PATH</strong>".
+</p>
+<p>Then perform the above test again to confirm that the problem has been 
+resolved.</p>
+<h1><a name="Confirm_PIP_availability">Confirm PIP availability</a></h1>
+<p>Assuming that you have the version issues resolved, <a name="ensure_that_you">
+ensure that you</a> can run <strong>pip</strong> from the command line by entering the following 
+command at the command prompt:</p>
+<pre>pip --version</pre>
+<p>This should produce an output similar to the following, but the versions may 
+be different:</p>
+<pre>pip 23.2.1 from C:\ProgramFiles\Python3121\Lib\site-packages\pip (python 3.12)</pre>
+<p>Ensure <strong>pip</strong>, <strong>setuptools</strong>, and <strong>wheel</strong> are up to date by entering the following command at the command prompt:</p>
+<pre>python -m pip install --upgrade pip setuptools wheel</pre>
+<p>This will produce several lines of output text that should end with something 
+like the following:</p>
+<pre>Successfully installed setuptools-69.0.3 wheel-0.42.0</pre>
+<p>Ensure that you have the latest version of <strong>pip</strong> by entering the following 
+command at the command prompt:</p>
+<pre>pip install --upgrade pip</pre>
+<p>If <strong>pip</strong> is up to date, you should see something like the following:</p>
+<pre>Requirement already satisfied: pip in c:\programfiles\python3121\lib\site-packages (23.3.2)</pre>
+<p>Otherwise you should see an output indicating that the latest version is 
+being installed.</p>
+<p>At this point you should be ready to use <strong>pip</strong> to install packages to 
+supplement the basic Python system. </p>
+<h1><a name="Install_Jupyter_Notebook">Install Jupyter Notebook</a></h1>
+<p>There is no requirement for you to install and use Jupyter Notebook in this 
+course. However, if you are interested in installing and experimenting with the 
+tool, here are the instructions for doing so.</p>
+<p>Before continuing, you should view the following three videos for an 
+introduction to the Jupyter Notebook:</p>
+<ul>
+	<li><a href="https://www.youtube.com/watch?v=T4WXs6niloU">The Jupyter 
+	Notebook Environment part 1</a></li>
+	<li><a href="https://www.youtube.com/watch?v=tz4UwhQs0Z8">The Jupyter 
+	Notebook Environment part 2</a></li>
+	<li><a href="https://www.youtube.com/watch?v=woEVRMADIck">The Jupyter 
+	Notebook Environment part 3</a></li>
+</ul>
+<p>To install the Jupyter Notebook code, open a command-line window in an 
+arbitrary folder and enter the following command at the command prompt. <em>(The 
+folder choice doesn't matter at this point because the Windows OS already knows 
+where the required material is located.)</em></p>
+<pre>pip install jupyter</pre>
+<p>This will cause the <strong>pip</strong> program to download and install the latest version of 
+the Jupyter Notebook from <a href="https://pypi.python.org/pypi">PyPI - the Python Package Index</a> 
+or perhaps some similar online archive.</p>
+<p>Then be very patient. This may take a rather long time to complete while producing a large amount of output 
+text on the command-line screen. Eventually the command prompt should return. If 
+you open the <strong>Scripts</strong> folder in the <strong>Python3xy</strong> folder after the 
+command prompt returns, you should see many files 
+related to the Jupyter Notebook including a file named <strong>jupyter.exe</strong>.</p>
+<h1><a name="Confirm_your_Jupyter_Notebook_installation">Confirm your Jupyter Notebook installation</a></h1>
+<p>You can confirm your Jupyter Notebook installation by creating and executing 
+a very simple Python program inside the Jupyter Notebook.</p>
+<p><a name="Open_a_command-line_window">Open a command-line window</a> in the folder where you plan to store your 
+Jupyter Notebook documents and enter the following command at the command prompt:</p>
+<pre>jupyter notebook</pre>
+<p>You should see a lot of text appearing in that window and the Jupyter 
+notebook should open in your browser.</p>
+<p>Open the <strong>New</strong> drop-down list in the upper right.</p>
+<p>Select Notebook and then select 
+<strong>Python 3</strong>.</p>
+<p>Enter the following code in the first cell:</p>
+<pre>print("Hello, World!")</pre>
+<p>Select the <strong>Kernel</strong> tab and then select <strong>Restart Kernel and 
+Run All Cells</strong>.</p>
+<p>Select <strong>Restart</strong> in the window that opens.</p>
+<p>The following text should appear inside the cell immediately below the 
+command indicating that you have successfully installed both Python 3 and 
+the Jupyter Notebook. </p>
+<pre>Hello, World!</pre>
+<p>When you are satisfied with the results, do the following:</p>
+<ol>
+	<li>Open the File menu in Jupyter Notebook and select "Close and Shut Down 
+	Notebook".</li>
+	<li>Close the command-line window that you opened
+	<a href="#Open_a_command-line_window">earlier</a> to stop the application 
+	from running.</li>
+</ol>
+<p>At this point you cannot run any code that requires libraries <em>(such as 
+matplotlib)</em> that are not included in the standard Python distribution 
+because you haven't installed any packages containing such libraries.</p>
+<h1><a name="Install_the_matplotlib_library">Install the matplotlib library</a></h1>
+<p>Open a command-line window in an arbitrary folder and enter the following command at the command prompt to 
+download and install the latest 
+version of the <strong>matplotlib</strong> library. This command will also 
+download and install the latest version of the <strong>numpy</strong> library.</p>
+<pre>pip install matplotlib</pre>
+<p>After some time (maybe a long time), the command prompt should return and matplotlib 
+will have been installed. You should see a folder containing <strong>matplotlib</strong> 
+at a location similar to the following:</p>
+<pre>c:\programfiles\python3121\lib\site-packages</pre>
+<p>You should also see a folder containing <strong>numpy</strong> at the same 
+location.</p>
+<h1>
+<a name="Confirm_your_matplotlib,_numpy,_and_Jupyter_Notebook_installations">Confirm your matplotlib, numpy, and Jupyter Notebook installations</a></h1>
+<p>You can test your installation with a script that requires the <strong>matplotlib</strong> 
+and <strong>numpy</strong> libraries in addition to the standard Python libraries. </p>
+<h2><a name="Confirm_in_a_stand-alone_mode">Confirm in a stand-alone mode</a></h2>
+<p>Create an empty text file named <strong>proj01.py</strong> in an arbitrary 
+empty folder. (Make sure it is <strong>not</strong> named <strong>proj01.py.txt</strong>.)</p>
+<p>Right click on the file. You should see an option similar to the following:</p>
+<p><strong>Edit with IDLE</strong></p>
+<p>That should open the IDLE IDE.</p>
+<p>Copy and paste the following code into the IDE.</p>
+<pre>
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+fig,axes = plt.subplots(2,2,
+                        figsize=(7,5),
+                        facecolor='0.75',
+                        linewidth=10,
+                        edgecolor='Red')
+
+t = np.arange(0, 6.0, 0.05)
+ax0,ax1,ax2,ax3 = axes.flatten()
+
+ax0.plot(t, np.cos(1*np.pi*t))
+ax0.set_ylabel('This is a ylabel')
+ax0.set_xlabel('This is an xlabel')
+ax0.set_title('A cosine')
+
+ax1.plot(t, np.exp(-t) )
+ax1.set_ylabel('This is a ylabel')
+ax1.set_xlabel('This is an xlabel')
+ax1.set_title('An exponential')
+
+ax2.plot(t, np.exp(-t) * np.cos(3*np.pi*t))
+ax2.set_ylabel('This is a ylabel')
+ax2.set_xlabel('This is an xlabel')
+ax2.set_title('A damped cosine')
+
+ax3.plot(t, np.exp(-t) * np.cos(4*np.pi*t),label='Damped cosine')
+ax3.plot(t, np.cos(4*np.pi*t),label='Cosine')
+ax3.legend(loc='upper right',framealpha=0.3,facecolor='Green')
+ax3.set_title('Subplot with a legend')
+ax3.set_ylabel('This is a ylabel')
+ax3.set_xlabel('This is an xlabel')
+
+ax0.grid(True)
+ax1.grid(True)
+ax2.grid(True)
+ax3.grid(True)
+
+fig.suptitle('A figure title')
+fig.tight_layout(pad=2)
+plt.show()
+</pre>
+<p>Press the <strong>F5</strong> key.</p>
+<p>This should cause the image shown below to appear on your screen. If you see 
+this image, that confirms that your <strong>matplotlib</strong> and <strong>
+numpy</strong> libraries have been properly installed.</p>
+<p><img alt="matplotlib01.jpg" height="283" src="matplotlib01.jpg" width="354" />&nbsp;</p>
+
+<p><strong>Description of the image shown above.</strong></p>
+<p><strong>Type of image:</strong></p>
+<p>A multi-panel scientific figure containing four subplots arranged in a 2 by 2 grid, each showing a different mathematical function.</p>
+<p><strong>Overall summary:</strong></p>
+<p>The figure displays four related plots of mathematical functions, including cosine, exponential decay, and damped cosine curves. Each subplot has the same x and y axis labels, individual titles, and one subplot includes a legend distinguishing two curves. A main title appears centered above the entire figure.</p>
+<p><strong>Detailed description:</strong></p>
+<ul>
+<li>The overall figure has a gray background and a centered main title at the top that reads "A figure title".</li>
+<li>The four subplots are arranged in a 2 by 2 grid, each with a white plotting area, x and y axes, and the same axis labels: the x axis label is "This is an xlabel" and the y axis label is "This is a ylabel".</li>
+<li>The top left subplot is titled "A cosine" and shows a cosine wave oscillating smoothly between approximately minus 1 and plus 1 across the horizontal axis.</li>
+<li>The top right subplot is titled "An exponential" and shows an exponentially decaying curve that starts near 1 on the left and decreases toward 0 as it moves to the right.</li>
+<li>The bottom left subplot is titled "A damped cosine" and shows a cosine wave whose amplitude decreases over the horizontal axis, forming a damped oscillation that gradually shrinks toward 0.</li>
+<li>The bottom right subplot is titled "Subplot with a legend" and contains two curves: one is a damped cosine similar to the bottom left subplot, and the other is a regular cosine wave. A legend appears inside this subplot near the upper right, with entries labeled "Damped cosine" and "Cosine" that identify the two curves.</li>
+</ul>
+<p><strong>Purpose of the image:</strong></p>
+<p>The image is intended to demonstrate how to generate and display multiple subplots in a single figure using Python, including setting titles, axis labels, plotting different mathematical functions, and adding a legend to distinguish multiple curves within one subplot.</p>
+
+<p>Once the file has been created and populated, you should also be able to 
+execute it by opening a command-line window in that same folder and entering the 
+following command:</p>
+<pre>python proj01.py</pre>
+<h2><a name="Confirm_in_Jupyter_Notebook">Confirm in Jupyter Notebook</a></h2>
+<p>You can use the same code to test Jupyter Notebook in conjunction with 
+the newly installed libraries. </p>
+<ol>
+	<li>Start Jupyter Notebook as before and create a new 
+notebook for Python 3 using the drop-down list in the upper right. </li>
+	<li>Copy the 
+	code from above into the first cell.&nbsp; </li>
+	<li>Pull down the 
+<strong>Kernel</strong> menu and select "Restart Kernel and Run All Cells". </li>
+</ol>
+<p>The same image should appear 
+immediately below the code except that it won't have the seven buttons along the 
+bottom.</p>
+<h1><a name="Install_the_pandas,_seaborn,_and_scipy_libraries">Install the pandas, seaborn, scipy 
+and pillow libraries</a></h1>
+<p>While you are at it, you should probably go ahead and execute the following 
+command at the command prompt to install the <strong>pandas</strong>, <strong>
+seaborn</strong>, <strong>scipy</strong>, and <strong>pillow</strong> libraries. You will need these libraries in 
+the follow-on course (ITSE-1372). The
+<strong>pillow</strong> library must be installed if you need to write output 
+files in the <strong>jpeg</strong> format.</p>
+<pre>
+pip install pandas seaborn pillow scipy
+</pre>
+<h1><a name="Confirm_the_installations">Confirm the installations</a></h1>
+<p>Enter the following command to produce a list showing all of the installed 
+libraries. Scroll through the list to confirm that it contains the libraries 
+discussed above.</p>
+<pre>pip list</pre>
+<p>You may also discover other libraries that you will need to install as you 
+progress through this coursework. If so, you should be able to use the knowledge 
+gained here to do the installations.</p>
+
+<h1><a name="Housekeeping_material">Housekeeping material</a></h1>
+<p>Author: Prof. Richard G. Baldwin<br/>
+Affiliation: Professor of Computer 
+Information Technology at Austin Community College in Austin, TX.<br/>
+File: 
+BuildingPythonFromScratch.htm<br/>
+Revised: 02/18/26<br/>
+Copyright 2018 Richard G. Baldwin</p>
+<p>-end-</p>
+<p>&nbsp;</p>
+</body>
+
+</html>

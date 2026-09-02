@@ -1,0 +1,197 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>StatStdev01.htm</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+p{color:black;}
+h1{color:green}
+h2{color: purple}
+h3{color: gray}
+b{color: #000000}
+strong{color: #000000}
+blockquote{color: purple}
+ul{color: maroon}
+ol{color: maroon}
+table{border: 1px solid black}
+th{border: 1px solid black}
+a:hover {
+	color: #cc0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.auto-style1 {
+	text-align: center;
+}
+div.a {
+  border: 2px solid black;
+
+}
+div.a {
+  border: 2px solid black;
+}
+</style>
+</head>
+
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 12pt; background-color: #FEFFF0;"
+>
+<h1 class="auto-style1">The Standard Deviation of a Dataset</h1>
+
+
+<h2>Table of Contents</h2>
+<ul>
+	<li><a href="#Discussion">Discussion</a><ul>
+		<li><a href="#Sample_Standard_Deviation:_">Sample Standard Deviation</a></li>
+		<li><a href="#Population_Standard_Deviation:_">Population Standard Deviation</a></li>
+		<li><a href="#Sample_versus_population_standard_deviation">Sample versus 
+		Population Standard Deviation</a></li>
+	</ul>
+	</li>
+	<li><a href="#References">References</a></li>
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+</ul>
+	<h2><a name="Discussion">Discussion</a></h2>
+<p>According to ChatGPT, the <strong>variance</strong> and <strong>standard deviation</strong> are measures of variability in a dataset, and they are used to describe how spread out the data is from the 
+<strong>mean</strong>. The variance is the average squared deviation of each data point from the mean, while the standard deviation is the square root of the variance.
+
+</p>
+<p>The formula for variance is:
+
+</p>
+<p>Variance = sum of squared deviations from the mean / total number of data points
+
+</p>
+<p>The formula for standard deviation is:
+
+</p>
+<p>Standard deviation = square root of variance
+
+</p>
+<p>There are two types of standard deviation - sample standard deviation and population standard deviation - and the choice of which to use depends on whether you are working with a 
+<a href="#Sample_versus_population_standard_deviation">sample</a> of data or the entire
+<a href="#Sample_versus_population_standard_deviation">population</a>.
+
+</p>
+<h3><a name="Sample_Standard_Deviation:_">Sample Standard Deviation
+</a>
+</h3>
+<p>When you are working with a sample of data, you use the sample standard deviation to estimate the variability of the population. In this case, you divide the sum of squared deviations from the mean by n-1, where n is the sample size.
+
+</p>
+<p>For example, suppose you have a sample of test scores: 70, 75, 80, 85, and 90. To calculate the sample standard deviation, you would first calculate the mean (80) and then find the deviations from the mean<em> 
+(subtract the mean from each data point)</em>:
+
+</p>
+<p>Deviations: -10, -5, 0, 5, 10
+
+</p>
+<p>Then, you would square each deviation:
+
+</p>
+<p>Squared deviations: 100, 25, 0, 25, 100
+
+</p>
+<p>Next, you would find the sum of the squared deviations:
+
+</p>
+<p>Sum of squared deviations: 250
+
+</p>
+<p>Finally, you would divide the sum of squared deviations by n-1 (4), and then take the square root:
+
+</p>
+<p>Sample standard deviation = square root of (250 / 4) = 7.91
+
+</p>
+<p>So the sample standard deviation for this dataset is 7.91.
+
+</p>
+<h3><a name="Population_Standard_Deviation:_">Population Standard Deviation
+</a>
+</h3>
+<p>When you have data for the entire population, you use the population standard deviation to measure variability. In this case, you divide the sum of squared deviations from the mean by n, where n is the population size.
+
+</p>
+<p>For example, suppose you have data on the heights of all the students in a 
+small class in a school: 63, 66, 61, 68, 65, 67, 64, 69, 62, 65.</p>
+<p>You calculate the mean height (65 inches) and then find the deviations from the mean: 
+</p>
+<p>Deviations: -2, 1, -4, 3, 0, 2, -1, 4, -3, 0
+
+</p>
+<p>Then, you would square each deviation:
+
+</p>
+<p>Squared deviations: 4, 1, 16, 9, 0, 4, 1, 16, 9, 0
+
+</p>
+<p>Next, you would find the sum of the squared deviations:
+
+</p>
+<p>Sum of squared deviations: 60
+
+</p>
+<p>Finally, you would divide the sum of squared deviations by n (10), and then take the square root:
+
+</p>
+<p>Population standard deviation = square root of (60 / 10) = 2.45
+
+</p>
+<p>So the population standard deviation for this dataset is 2.45.</p>
+<h3><a name="Sample_versus_population_standard_deviation">Sample versus Population Standard Deviation</a></h3>
+<p>Suppose that you want to estimate the spread of the heights of the members of 
+a basketball team. One approach might be to measure the height of the starting 
+five players, calculate the <strong><em>sample</em></strong> standard deviation 
+of that dataset, and use that for your estimate of the spread. In this case you 
+would be considering the sample of five players to be representative of the team 
+as a whole.</p>
+<p>Another and possibly better approach in this case might be to measure the 
+height of all the players on the team, calculate the <strong><em>population</em></strong> 
+standard deviation of that dataset, and use that for your estimate of the spread 
+of the heights of the team members.</p>
+<p>In this case it might seem obvious that the latter approach would provide the 
+best estimate of the spread. In many cases, however, it is not practical or even 
+possible to make measurements on an entire population. Consider, for example, a 
+quality assurance program that requires destructive testing of a product. In 
+that case, a sampling approach would be required in order to avoid destroying 
+all of the product.</p>
+<p>It should be obvious that as the total number of data points (n) in the 
+sample increases, 
+the effective difference between (n-1) and (n) in the denominator of the formula 
+decreases and the two approaches converge to the same value.</p>
+<h2><a name="References">References</a></h2>
+<p>The Python <strong>statistics</strong> library contains functions named
+<strong>stdev</strong> and <strong>pstdev</strong> that can be called to 
+calculate the sample and population standard deviations respectively of a 
+dataset.</p>
+<p>You will learn more about the standard deviation of a dataset in the 
+following lessons:</p>
+<ul>
+	<li>&nbsp;<a href="StatisticsPart01.html">Statistics Exercises Part 1</a></li>
+	<li><a href="StatisticsPart03.html">&nbsp;Statistics Exercises Part 3</a></li>
+</ul>
+<p>Open the lessons in your browser and search for <em>Standard Deviation</em>.</p>
+	<h2><a name="Miscellaneous">Miscellaneous</a></h2>
+	<p>This section contains a variety of miscellaneous information.</p>
+
+<div class="a"><p>Housekeeping material</p>
+				
+<ul>
+					<li>Author: Prof. Richard G. Baldwin</li>
+					<li>Lesson name: The Standard Deviation of a Dataset</li>
+					<li>File: StatStdev01.htm</li>
+					<li>Revised: 02/19/26</li>
+				</ul>
+</div>
+	<p>-end- </p>
+
+
+</body>
+</html>

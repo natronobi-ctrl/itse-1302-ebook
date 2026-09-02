@@ -1,0 +1,99 @@
+IMAGE DESCRIPTION RULES FOR DATA SCIENCE EBOOK
+Markdown structured description.
+================================================
+
+1. FIRST LINE FORMAT (MANDATORY AND FIXED)
+------------------------------------------
+The first line inside every Markdown code block MUST be:
+
+## **Description of the image shown above, VisualizationPart05.zzz.png**
+
+- The line must begin with "## ".
+- The entire line must be bold.
+- The filename "VisualizationPart04.zzz.png" must appear EXACTLY as written.
+- Do NOT replace "zzz" with any number; it remains a literal placeholder.
+- A blank line must follow this line.
+
+Note: the user may request a modification to the first line after the section begins in order to synchronize with the section number in the eBook.
+
+2. CODE BLOCK REQUIREMENTS
+---------------------------
+- The entire description MUST be inside a fenced Markdown code block using triple backticks.
+- ASCII-only characters must be used.
+- No emojis inside the code block.
+- No references to the assistant, the eBook, or the code block itself.
+- No commentary outside the code block except the assistant’s normal conversational lead-in.
+
+3. SECTION TITLES (FOUR AND ONLY FOUR)
+---------------------------------------
+The description MUST contain these four section titles in this exact order:
+
+### Type of Image
+### Overall Summary
+### Detailed Description
+### Purpose of the Image
+
+- Titles must appear exactly as written above.
+- Each section must contain complete sentences and clear instructional prose.
+
+4. CONTENT STYLE AND TONE
+--------------------------
+- Use clear, neutral, student-friendly instructional language.
+- Avoid overclaiming accessibility; provide factual, modest descriptions.
+- Avoid color-dependent descriptions unless necessary.
+- Describe structure, relationships, and purpose, not artistic interpretation.
+- No non-ASCII characters.
+
+5. HTML USAGE
+--------------
+- Blackboard-safe HTML is allowed inside the Markdown code block when needed.
+- No CSS, no JavaScript, no external dependencies.
+
+6. FILENAME HANDLING
+---------------------
+- The filename in the first line NEVER changes, regardless of the actual uploaded filename.
+- The assistant must NOT attempt to infer or update the filename.
+
+Note: the user may request a modification to the first line after the section begins in order to synchronize with the section number in the eBook.
+
+7. PURPOSE OF THIS FILE
+------------------------
+This rules file defines the required formatting and structure for all image descriptions in the Data Science eBook workflow. The assistant must follow these rules exactly for every image description during the session.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

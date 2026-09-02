@@ -1,0 +1,236 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>GAME-1343</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+a:hover {color:#00ff00;}
+.auto-style1 {
+	text-align: center;
+}
+div.a {
+  border: 2px solid black;
+}
+
+</style>
+</head>
+
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 18pt; background-color: #FFFFFF;"
+>
+<h1 class="auto-style1">G0103: Command-Line Arguments in Python</h1>
+<!-- All c.n.x references purged 02/24/22 -->
+<h2>Table of Contents</h2>
+<ul>
+	<li><a href="#Understanding_Command-Line_Arguments_in_Python_">Understanding Command-Line Arguments in Python 
+	</a></li>
+	<li><a href="#What_Are_Command-Line_Arguments">What 
+Are Command-Line Arguments?</a></li>
+	<li><a href="#Accessing_Command-Line_Arguments_in_Python_">Accessing Command-Line Arguments in Python 
+	</a></li>
+	<li><a href="#Practical_Examples_" name="Practical_Examples_0">Practical Examples
+	</a>
+	<ul>
+		<li><a href="#File_Processing_Script">File Processing Script</a></li>
+		<li><a href="#Calculator_Script">Calculator Script</a></li>
+		<li><a href="#Advanced_Command-Line_Argument_Parsing">Advanced Command-Line Argument Parsing</a></li>
+	</ul>
+	</li>
+	<li><a href="#Conclusion_">Conclusion
+</a></li>
+	<li><a href="#Run_the_Code">Run the Code</a></li>
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+
+</ul>
+<h2><a name="Understanding_Command-Line_Arguments_in_Python_">Understanding Command-Line Arguments in Python 
+</a> 
+</h2>
+<p>Command-line arguments are a 
+powerful feature that <em>allows users to provide input to a program at runtime</em>. Understanding how to use command-line 
+arguments can significantly enhance the flexibility and usability of your 
+scripts. This lesson will cover  
+</p>
+<ul>
+	<li>the basics of command-line arguments, </li>
+	<li>how to 
+	enter and access them in Python, and </li>
+	<li>some practical examples to illustrate their use. </li>
+</ul>
+<h2><a name="What_Are_Command-Line_Arguments">What 
+Are Command-Line Arguments?</a> 
+</h2>
+<p>Command-line arguments are parameters passed to a 
+program when it is executed from the command line. They allow users to specify 
+options or parameters that can influence the behavior of the program without 
+changing the code. For example, a script that processes files might take the 
+file name as a command-line argument. 
+</p>
+<h2><a name="Accessing_Command-Line_Arguments_in_Python_">Accessing Command-Line Arguments in Python 
+</a> 
+</h2>
+<p>In Python, command-line arguments are stored in a list called <strong>sys.argv</strong>, which is 
+part of the sys module. The first element of this list, <strong>sys.argv[0]</strong>, is the name 
+of the script itself. The subsequent elements are the arguments passed to the 
+script.&nbsp;
+</p>
+<p>Here is a simple example to illustrate this:</p>
+<div class="a">
+<pre>import sys
+
+# Print the name of the script
+print("Script name:", sys.argv[0])
+
+# Print the command-line arguments
+for i, arg in enumerate(sys.argv[1:], start=1):
+    print(f"Argument {i}: {arg}")
+</pre>
+</div>
+
+<p>Create this script using your favorite text editor, save it in a file 
+named <strong>script.py</strong>, and run it from the 
+command line.</p>
+<p>For example, to run this script from the command line, you would enter the 
+following command:</p>
+
+
+
+<div class="a">
+<pre>python script.py arg1 arg2 arg3
+</pre>
+</div>
+<p>The output would be:</p>
+<div class="a">
+<pre>Script name: script.py
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
+</pre>
+</div>
+<p>In case you don't know how to access the command line, see an explanation in 
+an earlier lesson or ask your favorite AI 
+tool to show you how. </p>
+<p>If you get an error when you run this code, ask your favorite AI tool to help 
+you install Python in such a way that it is accessible from the command line.</p>
+<h2><a name="Practical_Examples_">Practical Examples
+</a>
+</h2>
+<h3><a name="File_Processing_Script">File Processing Script</a></h3>
+<p>Suppose you have a script that processes a file. You can pass the file name 
+as a command-line argument. Here is an example:</p>
+<div class="a">
+<pre>import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python script.py --filename--")
+    sys.exit(1)
+
+filename = sys.argv[1]
+
+with open(filename, 'r') as file:
+    content = file.read()
+    print(content)
+</pre>
+</div>
+
+<p>This script checks if exactly one argument (the file name) is provided. If not, it prints a usage message and exits. Otherwise, it reads and prints the content of the specified file.
+</p>
+<p>Create this script using your favorite text editor, save it in a file 
+named <strong>script.py</strong>, and run it from the command line with the 
+following command where <strong>myFile.txt </strong>is the name of the file of interest.</p>
+
+
+
+<div class="a">
+<pre>python script.py myFile.txt </pre>
+</div>
+<h3><a name="Calculator_Script">Calculator Script</a></h3>
+<p>You can create a simple calculator that takes two numbers and an operator as command-line arguments:</p>
+
+
+
+<div class="a">
+<pre>import sys
+
+if len(sys.argv) != 4:
+    print("Usage: python calculator.py --num1-- --operator-- --num2--")
+    sys.exit(1)
+
+num1 = float(sys.argv[1])
+operator = sys.argv[2]
+num2 = float(sys.argv[3])
+
+if operator == '+':
+    result = num1 + num2
+elif operator == '-':
+    result = num1 - num2
+elif operator == '*':
+    result = num1 * num2
+elif operator == '/':
+    result = num1 / num2
+else:
+    print("Invalid operator. Use +, -, *, or /.")
+    sys.exit(1)
+
+print(f"Result: {result}")
+</pre>
+</div>
+<p>This script performs basic arithmetic operations based on the provided arguments.
+</p>
+<h3><a name="Advanced_Command-Line_Argument_Parsing">Advanced Command-Line Argument Parsing</a>
+</h3>
+<p>For more complex command-line argument parsing, Python provides the <strong>argparse</strong> module. This module allows you to define expected arguments, their types, default values, and help messages. Here is an example:</p>
+<div class="a">
+<pre>import argparse
+
+parser = argparse.ArgumentParser(description="A simple calculator.")
+parser.add_argument("num1", type=float, help="First number")
+parser.add_argument("operator", choices=['+', '-', '*', '/'], help="Operator")
+parser.add_argument("num2", type=float, help="Second number")
+
+args = parser.parse_args()
+
+if args.operator == '+':
+    result = args.num1 + args.num2
+elif args.operator == '-':
+    result = args.num1 - args.num2
+elif args.operator == '*':
+    result = args.num1 * args.num2
+elif args.operator == '/':
+    result = args.num1 / args.num2
+
+print(f"Result: {result}")
+</pre>
+</div>
+<p>This script uses <strong>argparse</strong> to handle command-line arguments more robustly and provides helpful error messages and usage instructions.
+
+</p>
+<h2><a name="Conclusion_">Conclusion</a> </h2>
+<p>Understanding command-line arguments is a fundamental skill for any Python programmer. They allow you to create flexible and user-friendly scripts that can be easily customized by users. By mastering the basics of 
+<strong>sys.argv</strong> and exploring the <strong>argparse</strong> module, you can enhance the functionality and usability of your Python programs.</p>
+<h2><a name="Run_the_Code">Run the Code</a></h2>
+<p>I encourage you to copy and run the code shown above. Experiment with the code, making changes, and observing the results of your changes. Make certain that you can explain why your changes behave as they do.</p>
+
+<h2><a name="Miscellaneous">Miscellaneous</a></h2>
+<div class="a">
+			<ul>
+				<li>Lesson name: G0103: Command-Line Arguments in Python</li>
+				<li>File: G0103.CommandLineArgs.htm</li>
+				<li>Revised: 02/19/26</li>
+				<li>Attribution: Based heavily on Microsoft Copilot</li>
+			</ul>
+</div>
+
+<p>-end- </p>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>StatZscore01.htm</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+p{color:black;}
+h1{color:green}
+h2{color: purple}
+h3{color: gray}
+b{color: #000000}
+strong{color: #000000}
+blockquote{color: purple}
+ul{color: maroon}
+ol{color: maroon}
+table{border: 1px solid black}
+th{border: 1px solid black}
+a:hover {
+	color: #cc0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.auto-style1 {
+	text-align: center;
+}
+div.a {
+  border: 2px solid black;
+
+}
+div.a {
+  border: 2px solid black;
+}
+</style>
+</head>
+
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 12pt; background-color: #FEFFF0;"
+>
+<h1 class="auto-style1">Standardization: Working With the Z-Score</h1>
+
+
+<h2>Table of Contents</h2>
+<ul>
+	<li><a href="#Discussion">Discussion</a><ul>
+		<li><a href="#General">General</a></li>
+		<li><a href="#Computing_Probability">Computing Probability</a></li>
+		<li><a href="#Example_Probability_Computation">Example Probability 
+		Computation</a></li>
+	</ul>
+	</li>
+	<li><a href="#References">References</a></li>
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+</ul>
+	<h2><a name="Discussion">Discussion</a></h2>
+<h3><a name="General">General</a></h3>
+<p>According to ChatGPT, z-scores, also known as standard scores, are a statistical measure that indicates how many standard deviations a data point is from the mean of the dataset. They are a way to standardize data so that it can be compared across different datasets with different scales and means.
+
+</p>
+<p>The formula for calculating a z-score is:
+
+</p>
+<p>z = (x - μ) / σ
+
+</p>
+<p>Where:
+
+    </p>
+<ul>
+	<li>x is the value you want to convert to a z-score
+    </li>
+	<li>μ is the mean of the dataset
+    </li>
+	<li>σ is the standard deviation of the dataset </li>
+</ul>
+<p>Once you calculate the z-score, you can interpret it as follows:
+
+    </p>
+<ul>
+	<li>A positive z-score indicates that the data point is above the mean.
+    </li>
+	<li>A negative z-score indicates that the data point is below the mean.
+    </li>
+	<li>The absolute value of the z-score indicates how far the data point is from the mean in terms of standard deviations.
+	</li>
+</ul>
+<p>For example, let's say you have a dataset of exam scores with a mean of 70 and a standard deviation of 10. A student scored an 85 on the exam. To calculate the z-score for this score, you would use the formula:
+
+</p>
+<p>z = (85 - 70) / 10 = 1.5
+
+</p>
+<p>This means that the student's score is 1.5 standard deviations above the mean.
+
+</p>
+<p>Z-scores can be used for a variety of purposes, such as identifying outliers, comparing data from different datasets, and determining the probability of a data point occurring within a certain range.</p>
+<h3><a name="Computing_Probability">Computing Probability</a></h3>
+<p>Continuing with ChatGPT, to compute the probability of a data point occurring within a certain range using z-scores, you can use a standard normal distribution table or statistical software.
+
+</p>
+<p>The standard normal distribution is a probability distribution that has a mean of 0 and a standard deviation of 1. The z-score of any data point can be transformed into a corresponding standard normal distribution value using a table or software.
+
+</p>
+<p>For example, suppose we want to find the probability of a data point being less than or equal to a certain value x, given a dataset with a mean of μ and a standard deviation of σ. We can use the z-score formula to convert x into a z-score:
+
+</p>
+<p>z = (x - μ) / σ
+
+</p>
+<p>Once we have the z-score, we can use a standard normal distribution table or software to find the probability of a data point being less than or equal to that z-score. The table or software will give us a probability value, which we can interpret as the probability of a data point being less than or equal to x.
+
+</p>
+<p>For example, let's say we have a dataset of heights with a mean of 68 inches and a standard deviation of 3 inches. We want to find the probability of a person being less than or equal to 70 inches tall. We can use the z-score formula to convert 70 inches into a z-score:
+
+</p>
+<p>z = (70 - 68) / 3 = 0.67
+
+</p>
+<p>We can then use a standard normal distribution table or software to find the probability of a data point being less than or equal to a z-score of 0.67, which is approximately 0.7486. This means that there is a 74.86% chance of a person being less than or equal to 70 inches tall in this dataset.</p>
+<h3><a name="Example_Probability_Computation">Example Probability Computation</a></h3>
+<p>Continuing with ChatGPT, assume</p>
+<p>μ = 399.32
+<br/>σ = 66.59
+<br/>Q1 = 352.62
+</p>
+<p>What is the probability that x &lt; Q1</p>
+<p>To find the probability that x is less than Q1, we need to calculate the z-score for Q1 and then use a standard normal distribution table or calculator to find the corresponding probability.
+
+</p>
+<p>The z-score formula is:
+
+</p>
+<p>z = (x - μ) / σ
+
+</p>
+<p>Substituting the values given: </p>
+<p>z = (352.62 - 399.32) / 66.59
+<br/>z = -0.703
+
+</p>
+<p>Using a standard normal distribution table or calculator, we find that the probability of z being less than -0.703 is approximately 0.2419.
+
+</p>
+<p>Therefore, the probability that x is less than Q1 is 0.2419 or about 24.19%.</p>
+<p>The reason why the probability is not exactly 0.25 as you might expect is because the standard normal distribution is a continuous probability distribution, meaning that it assigns probabilities to ranges of values rather than specific values.</p>
+<p>In this case, the z-score of -0.703 corresponds to a range of values between negative infinity and -0.703 on the standard normal distribution curve. The area under the curve for this range is approximately 0.241, which represents the probability of observing a value less than Q1.
+
+</p>
+<p>While the probability of observing a value less than Q1 is close to 0.25, it is not exactly 0.25 because the normal distribution is a continuous probability distribution, and probabilities are assigned to ranges of values rather than specific values.</p>
+<h2><a name="References">References</a></h2>
+<p>You will find sample code for working with the z-score in the lesson titled 
+<a href="StatisticsPart03.html">Statistics Exercises Part 3</a>.</p>
+	<h2><a name="Miscellaneous">Miscellaneous</a></h2>
+	<p>This section contains a variety of miscellaneous information.</p>
+
+<div class="a"><p>Housekeeping material</p>
+				
+<ul>
+					<li>Author: Prof. Richard G. Baldwin</li>
+					<li>Lesson name: Standardization: Working With the Z-Score</li>
+					<li>File: StatZscore01.htm
+</li>
+					<li>Revised: 04/11/23</li>
+					<li>Reviewed:02/22/26</li>
+				</ul>
+</div>
+	<p>-end- </p>
+
+
+</body>
+</html>

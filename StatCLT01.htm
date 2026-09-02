@@ -1,0 +1,196 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>StatCLT01.htm</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+p{color:black;}
+h1{color:green}
+h2{color: purple}
+h3{color: gray}
+b{color: #000000}
+strong{color: #000000}
+blockquote{color: purple}
+ul{color: maroon}
+ol{color: maroon}
+table{border: 1px solid black}
+th{border: 1px solid black}
+a:hover {
+	color: #cc0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.auto-style1 {
+	text-align: center;
+}
+div.a {
+  border: 2px solid black;
+
+}
+div.a {
+  border: 2px solid black;
+}
+.auto-style3 {
+	text-align: center;
+	border: 2px solid #000000;
+}
+.auto-style4 {
+	text-align: center;
+	border: 2px solid #000000;
+	background-color: #FFFF00;
+}
+.auto-style6 {
+	text-align: center;
+	border: 2px solid #000000;
+	background-color: #C0C0C0;
+}
+.auto-style7 {
+	text-align: center;
+	border: 2px solid #000000;
+	background-color: #FEFFF0;
+}
+.auto-style8 {
+	text-align: center;
+	border: 2px solid #000000;
+	background-color: #00FFFF;
+}
+</style>
+</head>
+
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 12pt; background-color: #FEFFF0;"
+>
+<h1 class="auto-style1">The Central Limit Theorem</h1>
+
+
+<h2>Table of Contents</h2>
+<ul>
+	<li><a href="#Discussion">Discussion</a></li>
+	<li><a href="#References">References</a></li>
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+</ul>
+	<h2><a name="Discussion">Discussion</a></h2>
+<p>According to ChatGPT, the central limit theorem (CLT) is a fundamental 
+concept in statistics and probability theory. It states that, under certain 
+conditions, the sum or average of a large number of independent and identically 
+distributed&nbsp; random variables will follow a normal distribution, regardless of the distribution of the original random variables. </p>
+<p>In other words, the CLT states that if you take many random samples from a population, the distribution of the sample means or sample sums will be approximately normal, regardless of the distribution of the population.
+
+</p>
+<p>There are several versions of the CLT, each with slightly different conditions and assumptions. The most common version of the CLT states that if you take a large enough sample size from a population with a finite mean and variance, then the distribution of the sample means will approach a normal distribution with mean equal to the population mean and standard deviation equal to the population standard deviation divided by the square root of the sample size.
+
+</p>
+<p>The CLT has many important applications in statistics and data analysis. For example, it is used to construct confidence intervals and perform hypothesis tests, to estimate the population mean and variance from a sample, and to model the behavior of complex systems in physics, engineering, and other fields.
+
+</p>
+<p>Overall, the central limit theorem is a powerful tool for understanding the behavior of random variables and the statistical properties of large datasets, and is essential for anyone working in the fields of statistics, data science, or machine learning.</p>
+<p>According to this author, this can be illustrated in practice by throwing a 
+pair of dice a large number of times, recording the sum each time, and creating 
+a frequency chart of the sums. The frequency chart will tend to have a peak at a 
+value of seven and will be very low at values of two and twelve. That is because 
+when you throw the pair of dice, there is only one way to get a sum of two or 
+a sum of twelve but there are six ways to get a sum of seven.</p>
+<p>The following chart shows the number of ways for the sum to have the values 
+of two through twelve.</p>
+<table>
+	<tr>
+		<td class="auto-style7" style="width: 100">&nbsp;</td>
+		<td class="auto-style4" style="width: 100">1</td>
+		<td class="auto-style4" style="width: 100">2</td>
+		<td class="auto-style4" style="width: 100">3</td>
+		<td class="auto-style4" style="width: 100">4</td>
+		<td class="auto-style4" style="width: 100">5</td>
+		<td class="auto-style4" style="width: 100">6</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 100">1</td>
+		<td class="auto-style8" style="width: 100">2</td>
+		<td class="auto-style3" style="width: 100">3</td>
+		<td class="auto-style3" style="width: 100">4</td>
+		<td class="auto-style3" style="width: 100">5</td>
+		<td class="auto-style3" style="width: 100">6</td>
+		<td class="auto-style6" style="width: 100">7</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 100">2</td>
+		<td class="auto-style3" style="width: 100">3</td>
+		<td class="auto-style3" style="width: 100">4</td>
+		<td class="auto-style3" style="width: 100">5</td>
+		<td class="auto-style3" style="width: 100">6</td>
+		<td class="auto-style6" style="width: 100">7</td>
+		<td class="auto-style3" style="width: 100">8</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 100">3</td>
+		<td class="auto-style3" style="width: 100">4</td>
+		<td class="auto-style3" style="width: 100">5</td>
+		<td class="auto-style3" style="width: 100">6</td>
+		<td class="auto-style6" style="width: 100">7</td>
+		<td class="auto-style3" style="width: 100">8</td>
+		<td class="auto-style3" style="width: 100">9</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 100">4</td>
+		<td class="auto-style3" style="width: 100">5</td>
+		<td class="auto-style3" style="width: 100">6</td>
+		<td class="auto-style6" style="width: 100">7</td>
+		<td class="auto-style3" style="width: 100">8</td>
+		<td class="auto-style3" style="width: 100">9</td>
+		<td class="auto-style3" style="width: 100">10</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 100">5</td>
+		<td class="auto-style3" style="width: 100">6</td>
+		<td class="auto-style6" style="width: 100">7</td>
+		<td class="auto-style3" style="width: 100">8</td>
+		<td class="auto-style3" style="width: 100">9</td>
+		<td class="auto-style3" style="width: 100">10</td>
+		<td class="auto-style3" style="width: 100">11</td>
+	</tr>
+	<tr>
+		<td class="auto-style4" style="width: 100">6</td>
+		<td class="auto-style6" style="width: 100">7</td>
+		<td class="auto-style3" style="width: 100">8</td>
+		<td class="auto-style3" style="width: 100">9</td>
+		<td class="auto-style3" style="width: 100">10</td>
+		<td class="auto-style3" style="width: 100">11</td>
+		<td class="auto-style8" style="width: 100">12</td>
+	</tr>
+</table>
+<p>The numbers across the top show the possible values of one die and the 
+numbers in the first column show the possible values of the second die when you 
+cast a pair of dice. The other numbers show the possible sums of the values 
+shown on the pair of dice. As you can see, the sum of seven can occur much more often 
+than the sum of two or the sum of twelve. In fact, the likelihood of obtaining a sum of seven is six times greater than the likelihood of obtaining a sum of two when rolling a pair of dice.</p>
+<p>This is similar to what happens when you add the values, 
+point by point of two or more data sets. Certain sums are more likely to occur 
+than others. If the datasets are random, the distribution of the resulting 
+dataset will tend toward normal.</p>
+<h2><a name="References">References</a></h2>
+<p>This result was used by the function named <strong><em>A random dataset generator</em></strong> to create an approximately normal 
+dataset in the lesson titled <a href="StatisticsPart01.html">Statistics Exercises Part 1</a>. The Central Limit Theorem is discussed and 
+illustrated in more detail in the lessons titled <a href="StatisticsPart03.html">Statistics Exercises Part 3</a> and 
+<a href="StatisticsPart04.html">Statistics Exercises Part 4</a>.</p>
+	<h2><a name="Miscellaneous">Miscellaneous</a></h2>
+	<p>This section contains a variety of miscellaneous information.</p>
+
+<div class="a"><p>Housekeeping material</p>
+				
+<ul>
+					<li>Author: Prof. Richard G. Baldwin</li>
+					<li>Lesson name: The Central Limit Theorem</li>
+					<li>File: StatCLT01.htm</li>
+					<li>Revised: 02/22/26</li>
+				</ul>
+</div>
+	<p>-end- </p>
+
+
+</body>
+</html>

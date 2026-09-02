@@ -1,0 +1,109 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>StatQuartilesIQR.htm</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+p{color:black;}
+h1{color:green}
+h2{color: purple}
+h3{color: gray}
+b{color: #000000}
+strong{color: #000000}
+blockquote{color: purple}
+ul{color: maroon}
+ol{color: maroon}
+table{border: 1px solid black}
+th{border: 1px solid black}
+a:hover {
+	color: #cc0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.auto-style1 {
+	text-align: center;
+}
+div.a {
+  border: 2px solid black;
+
+}
+div.a {
+  border: 2px solid black;
+}
+</style>
+</head>
+
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 12pt; background-color: #FEFFF0;"
+>
+<h1 class="auto-style1">Quartiles, the Inner Quartile Range, and Outliers</h1>
+
+
+<h2>Table of Contents</h2>
+<ul>
+	<li><a href="#Discussion">Discussion</a></li>
+	<li><a href="#References">References</a></li>
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+</ul>
+	<h2><a name="Discussion">Discussion</a></h2>
+<p>According to ChatGPT, quartiles are simply a way of dividing a dataset into four equal parts, by ordering the observations from smallest to largest and dividing them into three points: the first quartile (Q1), the second quartile (Q2), and the third quartile (Q3). Q2 is the median of the dataset, or the value that splits the dataset into two equal halves. Q1 is the median of the first half of the dataset, and Q3 is the median of the second half of the dataset. </p>
+<p>The interquartile range (IQR) is the difference between the third and first quartiles, or 
+
+</p>
+<p>IQR = Q3 - Q1. 
+
+</p>
+<p>The IQR contains the middle 50% of the data, making it a measure of the spread of the middle 50% of the dataset. It is often used as a measure of variability in a dataset, and is a robust alternative to the range, which can be sensitive to extreme values.
+
+</p>
+<p>Outliers are observations in a dataset that are unusually far from the other observations. Outliers can be caused by measurement errors, data entry errors, or by the presence of extreme values in the data. Outliers can significantly affect the results of statistical analyses and can distort the interpretation of data.
+
+</p>
+<p>A common method for identifying outliers is to use the IQR. Observations that fall below 
+
+</p>
+<p>Q1 - 1.5*IQR
+
+</p>
+<p>or above 
+
+</p>
+<p>Q3 + 1.5*IQR
+
+</p>
+<p>are considered potential outliers. These values can be plotted on a 
+<a href="StatBoxWhisker01.htm">box plot</a> as individual points outside the whiskers.
+
+</p>
+<p>It is important to note that not all observations outside this range are necessarily outliers, and some datasets may have multiple legitimate outliers. Therefore, it is important to use additional methods to evaluate potential outliers, such as investigating the source of the data or conducting sensitivity analyses.
+
+</p>
+<p>In summary, quartiles, the IQR, and outliers are important concepts in descriptive statistics. They are used to summarize the distribution and variability of a dataset, and to identify potential anomalies in the data.</p>
+<h2><a name="References">References</a></h2>
+<p>Outliers are discussed in conjunction with the median in
+<a href="StatisticsPart01.html">Statistics Exercises Part 1</a>. Code for computing the quartiles, the IQR, and the outlier limits is provided 
+in the lesson titled <a href="StatisticsPart02.html">Statistics Exercises Part 2</a>.</p>
+	<h2><a name="Miscellaneous">Miscellaneous</a></h2>
+	<p>This section contains a variety of miscellaneous information.</p>
+
+<div class="a"><p>Housekeeping material</p>
+				
+<ul>
+					<li>Author: Prof. Richard G. Baldwin</li>
+					<li>Lesson name: Quartiles, the Inner Quartile Range, and Outliers</li>
+					<li>File: StatQuartilesIQR.htm</li>
+					<li>Revised: 04/10/23</li>
+					<li>Reviewed:02/22/26</li>
+				</ul>
+</div>
+	<p>-end- </p>
+
+
+</body>
+</html>

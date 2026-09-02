@@ -1,0 +1,165 @@
+﻿<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>StatHist01.htm</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+p{color:black;}
+h1{color:green}
+h2{color: purple}
+h3{color: gray}
+b{color: #000000}
+strong{color: #000000}
+blockquote{color: solid black}
+ul{color: maroon}
+ol{color: maroon}
+table{border: 1px solid black}
+th{border: 1px solid black}
+a:hover {
+	color: #cc0000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.auto-style1 {
+	text-align: center;
+}
+div.a {
+  border: 2px solid black;
+
+}
+div.a {
+  border: 2px solid black;
+}
+</style>
+</head>
+
+<body style="font-family: Arial,Helvetica,sans-serif;font-size: 12pt; background-color: #FEFFF0;"
+>
+<h1 class="auto-style1">Histograms</h1>
+<h2>Table of Contents</h2>
+<ul>
+	<li><a href="#Discussion">Discussion</a><ul>
+		<li><a href="#General">General</a></li>
+		<li><a href="#Positively_and_Negatively_Skewed_Distributions">Positively and Negatively Skewed Distributions</a></li>
+		<li><a href="#Relative_Frequency_Histograms">Relative Frequency 
+		Histograms</a></li>
+	</ul>
+	</li>
+	<li><a href="#References">References</a></li>
+	<li><a href="#Miscellaneous">Miscellaneous</a></li>
+</ul>
+
+	<h2><a name="Discussion">Discussion</a></h2>
+<h3><a name="General">General</a></h3>
+<p>According to ChatGPT, a histogram is a specific type of 
+<a href="StatFreqDist01.htm">frequency distribution chart</a> that displays the distribution of a continuous variable. Like frequency distribution charts, histograms are used to visualize the distribution of a dataset and identify patterns and trends.
+
+</p>
+<p>To create a histogram, you'll first need to divide the range of the data into a set of intervals, or "bins". The number of bins and their size can vary depending on the dataset and the purpose of the histogram. Generally, a good rule of thumb is to use between 5 and 20 bins.</p>
+<p>Next, you'll count how many data points fall into each bin, just as you would with a frequency distribution chart. The frequency for each bin is then plotted as a bar on the histogram, with the height of the bar representing the frequency of the data points that fall into that bin.
+
+</p>
+<p>One important thing to note about histograms is that the bins are typically drawn with equal width. This means that the area of each bar is proportional to the frequency of the data points that fall into the bin, rather than just the height of the bar. This is important because it allows you to compare the relative frequencies of each bin more accurately.
+
+</p>
+
+<blockquote>Note, the lesson titled <a href="Preview01.htm">Histogram Plotting Preview</a> explains how to write python code to display histograms. 
+With the possible exception of a few very small datasets, you won't be creating 
+histograms by hand in this course. However, it is very important that you 
+understand how histogram plots are created so that you will understand the 
+variety of parameters that can be applied to the code when creating a histogram 
+	plot. 
+-- Prof. Baldwin</blockquote>
+
+<p>Histograms can be used to identify a variety of different characteristics of a dataset. For example, you can use a histogram to determine the central tendency of the data, the spread of the data, and the shape of the distribution. Some common shapes of distributions that you might encounter in a histogram include:
+
+    </p>
+<ul>
+	<li>A normal distribution, which is symmetric and bell-shaped.
+    </li>
+	<li>A skewed distribution, which is asymmetrical and has a longer tail on one side than the other.
+    </li>
+	<li>A bimodal distribution, which has two distinct peaks. </li>
+</ul>
+<p>Overall, histograms are a powerful tool for understanding the distribution of a dataset and identifying patterns and trends. </p>
+<h3><a name="Positively_and_Negatively_Skewed_Distributions">Positively and 
+Negatively Skewed Distributions</a></h3>
+<p>Continuing with ChatGPT, a  histogram is said to be left-skewed if the majority of the data is concentrated on the right side of the graph and the tail of the histogram is longer on the left side. On the other hand, a histogram is said to be right-skewed if the majority of the data is concentrated on the left side of the graph and the tail of the histogram is longer on the right side.
+
+</p>
+<p>Left-skewed histograms are also called negatively skewed histograms, and right-skewed histograms are also called positively skewed histograms. 
+<a href="#skewness_">Skewness</a> is a measure of the degree to which a distribution deviates from symmetry. A perfectly symmetric distribution, like a normal distribution, has a skewness of zero.
+
+</p>
+<p>In a left-skewed histogram, the mean is typically less than the median, because the long tail on the left side of the graph pulls the mean to the left. This means that the majority of the data falls to the right of the mean. Conversely, in a right-skewed histogram, the mean is typically greater than the median, because the long tail on the right side of the graph pulls the mean to the right. This means that the majority of the data falls to the left of the mean.
+
+</p>
+<p>It's important to note that a computed skewness value other than zero doesn't necessarily indicate that the data is skewed in a negative or positive way - it simply indicates that the distribution is not perfectly symmetrical. However, if the skewness is very large (e.g. greater than 1 or less than -1), then the distribution may be heavily skewed and the mean may not be a good measure of central tendency.
+
+</p>
+<p>Understanding whether a dataset is left-skewed, right-skewed, or symmetric can be important for selecting appropriate statistical tests and models. For example, if the data is heavily skewed, it may be better to use nonparametric tests that do not rely on assumptions of normality.</p>
+<p>To compute the skewness of a distribution, you can use a formula that measures the degree of asymmetry in the distribution. There are different formulas for skewness, but one commonly used formula is the Pearson's skewness coefficient, also known as the moment coefficient of skewness. The formula for Pearson's skewness coefficient is:
+
+</p>
+<p><a name="skewness_">skewness</a> = 3 x (mean - median) / standard deviation
+
+</p>
+<p>In this formula, the mean and median are the measures of central tendency of the distribution, and the standard deviation is a measure of the spread of the data. The numerator of the formula measures the difference between the mean and median, and the denominator scales this difference by the standard deviation.
+
+</p>
+<p>If the skewness is positive, it indicates that the distribution is right-skewed, with a longer tail on the right side of the graph. If the skewness is negative, it indicates that the distribution is left-skewed, with a longer tail on the left side of the graph. If the skewness is zero, it indicates that the distribution is symmetric.
+
+</p>
+<p>It's important to note that skewness is just one measure of the shape of a distribution, and it should be used in conjunction with other descriptive statistics and visualization tools to fully understand the characteristics of a dataset. Additionally, the interpretation of skewness can depend on the context and the specific application.</p>
+<h3><a name="Relative_Frequency_Histograms">Relative Frequency Histograms</a></h3>
+<p>Continuing with ChatGPT, a relative frequency histogram is a type of histogram where the vertical axis shows the relative frequency or proportion of data points in each bin, rather than the absolute frequency. In other words, the height of each bar represents the fraction or percentage of data points that fall into that bin, rather than the actual count of data points.
+
+</p>
+<p>To create a relative frequency histogram, you first divide the range of the data into a set of intervals or "bins". Then, instead of counting the number of data points that fall into each bin, you compute the proportion of data points that fall into each bin. This can be done by dividing the count of data points in each bin by the total number of data points. The resulting proportions or percentages are then plotted on the vertical axis of the histogram.
+
+</p>
+<blockquote>Note, the histograms shown in the lesson titled <a href="Preview01.htm">Histogram Plotting Preview</a> 
+are relative frequency histograms. This is accomplished by the statement that 
+reads:<br/><br/>density=True,#Normalize the histogram<br/></blockquote>
+<p>Relative frequency histograms are useful for comparing the distribution of two or more datasets that may have different sample sizes or scales. By using proportions or percentages, relative frequency histograms allow you to compare the relative frequencies of each bin across different datasets, rather than just the absolute counts.
+
+</p>
+<p>Like standard histograms, relative frequency histograms can be used to identify patterns and trends in the distribution of a dataset, such as the central tendency, spread, and shape of the distribution.</p>
+<h2><a name="References">References</a></h2>
+<p>You will learn much more about distributions and histograms in the following lessons:</p>
+<ul>
+	<li><a href="Preview01.htm">Histogram Plotting Preview</a></li>
+	<li>
+<a href="StatisticsPart01.html">Statistics Exercises Part 1</a></li>
+	<li>
+	<a href="StatisticsPart02.html">Statistics Exercises Part 2</a></li>
+	<li>
+	<a href="StatisticsPart04.html">Statistics Exercises Part 4</a></li>
+</ul>
+<p>Open those lessons in your browser and search for the word <em>histogram</em>.</p>
+<p>The lesson titled <a href="Preview01.htm">Histogram Plotting Preview</a> 
+explains how to write python code to display histograms. </p>
+	<h2><a name="Miscellaneous">Miscellaneous</a></h2>
+	<p>This section contains a variety of miscellaneous information.</p>
+
+<div class="a"><p>Housekeeping material</p>
+				
+<ul>
+					<li>Author: Prof. Richard G. Baldwin</li>
+					<li>Lesson name: Histograms</li>
+					<li>File: StatHist01.htm</li>
+					<li>Revised: 02/19/26</li>
+				</ul>
+</div>
+	<p>-end- </p>
+
+
+</body>
+</html>

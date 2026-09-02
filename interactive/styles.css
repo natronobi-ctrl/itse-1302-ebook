@@ -223,6 +223,63 @@ h1 { font-size: clamp(2rem, 4vw, 3.1rem); margin: 0 0 0.6rem; }
 .home-card.accent { background: #1e3d32; color: #f4ecdc; }
 .home-card.accent p { color: #d8c59a; }
 
+.steps {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+  counter-reset: step;
+  display: grid;
+  gap: 1rem;
+}
+.steps li {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 1rem 1.1rem 1.1rem 3.4rem;
+}
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0.85rem;
+  top: 1rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: var(--forest);
+  color: #f4ecdc;
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  display: grid;
+  place-items: center;
+}
+.steps h2 { margin: 0 0 0.35rem; font-size: 1.15rem; }
+.steps p { margin: 0; color: var(--muted); }
+.callout {
+  background: #1e3d32;
+  color: #f4ecdc;
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+}
+.callout p { margin: 0 0 0.7rem; }
+.callout p:last-child { margin: 0; }
+.callout code, .guide-panel code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: rgba(0, 0, 0, 0.18);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+.guide-panel code { background: var(--paper-2); }
+.guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+.guide-actions .btn { text-decoration: none; display: inline-flex; align-items: center; }
+
 .quiz-progress { margin: 1.2rem 0 1.5rem; }
 .quiz-progress-bar {
   height: 8px;

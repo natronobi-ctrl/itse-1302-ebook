@@ -7,6 +7,7 @@ const CATALOG = {
       id: "start",
       title: "Getting started",
       items: [
+        { id: "guide", title: "How to use this ebook", type: "guide" },
         { id: "overview", title: "Overview", src: "Overview.1302.htm", type: "lesson" },
         { id: "building", title: "Building Python from scratch", src: "BuildingPythonFromScratch.htm", type: "lesson" },
         { id: "cli", title: "Command-line arguments", src: "G0103.CommandLineArgs.htm", type: "lesson" },

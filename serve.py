@@ -35,6 +35,7 @@ def main() -> int:
 
     url = f"http://127.0.0.1:{args.port}/"
     print(f"ITSE-1302 ebook is at {url}", flush=True)
+    print(f"Getting started: {url}#/guide", flush=True)
     print("Press Ctrl+C to stop.", flush=True)
     if not args.no_browser:
         webbrowser.open(url)
